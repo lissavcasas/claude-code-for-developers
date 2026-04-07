@@ -1,0 +1,696 @@
+Speaker 1
+Jan, ¿si estás por ahí? Disculpa. Hola. Sí, ¿qué tal? Buenas noches, docente Gabriel. Sí, dígame. Ya. Para que puedas grabarlo por el detalle que no se puede ingresar con la otra computadora. Sí, sí, no se preocupe, ya inicié grabación, puede iniciar la, la clase, no se preocupe. Sí. ¿Me escuchan todos bien, no? Para poder ya dar inicio.
+Speaker 2
+Sí se escucha bien.
+Speaker 3
+Sí se escucha.
+Speaker 4
+Le escuchamos, profe.
+Speaker 1
+Muy bien. Se inicia. Voy a compartir mi pantalla. ¿Si ven mi pantalla? Disculpen. ¿Me confirman?
+Speaker 2
+Sí, ya se ve.
+Speaker 1
+Ya, perfecto. Primer lugar, las disculpas del, del caso por el tema de los inconvenientes en esta primera sesión. Igual se va a tratar de, de llegar a todo, todo lo-- pues el tema de hoy que estamos ya en la agenda. Bueno, me presento. Bueno, mi nombre es Gabriel Ángel Nizama Duque. Eh, soy estadístico de profesión. Actualmente, laboro en lo que es-- soy de Perú, en Caja Trujillo, acá en Perú, una financiera, en lo que es especialista en ciencia de datos e inteligencia artificial. Eh, bueno, eh, yo estudié en la Nacional de Piura también. Bueno, eh, actualmente ya estoy iniciando un año de la Universidad Nacional de Ingeniería, en lo que es la maestría en Inteligencia Artificial. Y bueno, encantado de poder, eh, llevar este curso con el mejor desempeño posible y para poder lograr ese conocimiento que ustedes-- impartir ese conocimiento que ustedes esperan, ¿no? Bueno, ahorita principalmente vamos a ver lo que es las reglas de clase. Bueno, se espera que para poder llevar una mejor, eh, clase, tema de los micrófonos apagados solamente cuando uno consulte. Si tienen dudas, igual pueden levantar la mano y consultar, no hay problema. Y sobre todo, mantenerse atento a las clases, ¿no? La evaluación va a ser continua, hay ejercicios, tests. Es un curso, si bien, eh, una parte teórica, pero va a ser bastante también práctico, que es el objetivo, creo, que ustedes con un proyecto final, el cual será evaluado. Bueno, para iniciar, vamos a ver lo que es los fundamentos en set up y las estrategias de costo de CloudCop, ¿no? Bueno, vamos a desarrollar esto. Eh, fundamento, instalación, el t-- el tipo de modelos que tiene actualmente Cloud, estrategia de costos y su laboratorio. Bueno, eh, eh, ya, mmm, más o menos me indicaron que ustedes ya no sé si todos tendrán cuenta pro o algunos va a ser por la compra de créditos. Ahí sí quisiera que ustedes, eh, no sé o cuál no tiene una de las dos y me dice: "No, profe, yo no tengo ninguna de las dos". Ahí sí quiero saber si ya tienen una cuenta pro. ¿Por qué? Porque para ini-- para lo que es el CloudCop sí se necesita una cuenta pro o en todo caso, si no tuvieran, solamente comprar créditos, que serían cinco dólares, ¿no? Aprox. Que en tipo de cambio en Perú es dieciocho soles, dieciocho cincuenta aprox. No sé si alguno no tiene. A ver, ahí para ir aterrizando.
+Speaker 2
+Profe, yo tengo una pregunta. Cuando yo-
+Speaker 1
+Sí.
+Speaker 2
+...compré el curso, me asesoré con la persona y me dijo que en las ocho clases que vamos a tener se iba a lanzar alrededor de diez dólares. La verdad-
+Speaker 1
+Sí, aprox.
+Speaker 2
+...profe, yo soy muy nuevo en el tema y me gustaría que me aclarara qué yo debería hacer, cómo debería comprar estos créditos. No sé si me podría dar esa explicación.
+Speaker 1
+Sí, ahí también voy. Sí, sí. Sí, sí. Ahí también en, [carraspeo] de aquí ya en el tema de, de la instalación, ya les voy a dar unas indicaciones cómo pueden comprar sus créditos. Eh, sí, en promedio de diez dólares creo que bastaría para el total del curso, porque es un tema de tokens y vamos a ver la automatización de esos tokens. No se debería gastar más, ¿no? Para el tema de hasta llegar a su proyecto final. Pero sí, ahorita no sé si se ve mi pantalla, aquí hay un, un enlace que es console.anthropic.com. Los que no tengan y no quieren comprar pro, porque si alguno quiere comprar pro también es factible, pero si solo quieren comprar cinco dólares para estos inicios de clase y después compran los cinco más, entren aquí a console.anthropic.com. ¿Sí?
+Speaker 3
+Si compro el pro, ¿tengo el otro o, o son independientes?
+Speaker 1
+No, no, son independientes. A ver, ¿cómo te explico? El pro, eh, si bien sí te deja usar, eh, CloudCop, eh, pero es independiente, que si tú solo compras créditos, los créditos no te van a dar el, el, el tema del, del escritorio. Eh, lo que te va a dar es el API. Compras prácticamente tokens para usar el API de Cloud dentro de la terminal, lo que vamos a usar nosotros, pero no te da el tema del plan. Ténganlo en cuenta. No es que yo compro cinco dólares y voy a tener el, el, el plan, ¿no?
+Speaker 4
+Nosotros vamos a usar todo a través de la API.
+Speaker 1
+Exacto. ¿Por qué? Porque va a ser en, en consola, en ter-- en terminal. El terminal ID que vamos a usar en este es, eh, VS Code. No sé si todos han usado VS Code.
+Speaker 4
+VS Code, sí.
+Speaker 1
+Ahí también. Ahí, igual el que no haya usado me dice profe y lo-- para que lo vaya descargando. Es muy fácil, muy sencillo para poder ir viendo. Eh, pueden ingresar a este, a este link los que no tengan para que puedan recargar y para de aquí más adelante en la segunda parte de la sesión, que ya vamos a, a, a dar un, un pequeño introducción, porque esta clase más que todo es un poco más introductiva para poder ver el tema del, del uso, de cómo se usa la herramienta para ya en la segunda clase el día miércoles ya vamos a usarla con, con todo, ¿no? Por eso sí me gustaría que ya ingresen. No sé si alguien no tiene para que vaya ingresando y les pueda servir bastante.
+Speaker 5
+Disculpe, profesor, ¿no hay problema de que se compre la versión pro para el día de mañana quizás y de ahí recién tenerla para el miércoles?
+Speaker 1
+Te escucho bajito. No sé si soy yo.
+Speaker 4
+Sí, se escucha bajo.
+Speaker 5
+Ah, ¿ahora me escucha mejor?
+Speaker 1
+Sí, un poquito mejor. Dime, dime.
+Speaker 5
+Ah, te indicaba si se puede comprar el, la versión pro el día de mañana y ya tenerlo quizás para el miércoles.
+Speaker 1
+Mmm, claro, les voy a dejar igual cómo se llama un test que ustedes lo van a hacer y lo podrían ya hacerlo, ¿no? Igual. Pero igual como la clase es grabada, ya ustedes en su, en su casa pueden, pueden, cómo se llama, replicar lo que vamos a hacer, los que ya tengan, porque sí lo vamos a hacer para que ya puedan usar varios. ¿Sí ven mi, mi Explorer? Una consulta.
+Speaker 4
+No, se ve PowerPoint.
+Speaker 1
+Ya . A ver, al toque para dar una pequeña explicada a los que no tienen [asiente] toda la pantalla. ¿Ahí sí, ahí sí ven el Explorer?
+Speaker 4
+Se ve, se ve.
+Speaker 5
+Sí se mira.
+Speaker 1
+Ya, bacán, mira. Van, los que quieran comprar pro, yo creo que la mayoría sabe, entra a pro, paga sus veinte dólares, son mensuales, recuerden, y listo. Eh, si quieren comprar, ah, eh, créditos, que es tipo OpenAI, que también tiene tipo Gemini, todos, todas las inteligencias artificiales que actualmente hay en el mercado, van, copian ese link, igual la presentación ya la van a tener de aquí para ustedes y le dan aquí en continuar con su Gmail. ¿Sí? Le dan en continuar, se verifican, bla, bla, bla, y le va a dar el tema para, para la, la compra en este caso. Y solamente lo recargan con cinco dólares. Le va a pedir tarjeta de crédito, todos los otros pasos. Pueden desde cinco dólares. Si quieren, eh, ponerle más créditos, ya depende de ustedes. Pero yo pienso que estas primeras clases con cinco dólares como para que ustedes vayan viendo el consumo, eh, estaría bien. ¿Sí? No sé si ahí tienen alguna otra consulta para pasar ya al...
+Speaker 4
+Profe.
+Speaker 1
+Sí.
+Speaker 4
+Entonces, los que tenemos pro no tenemos que comprar los créditos.
+Speaker 1
+No, no, no, no, no. Los que tienen pro, ya normal, no se preocupen. Hablo los que has-- ahorita, ahorita no tienen ni créditos ni pro. Si tienen pro, excelente, no hay inconveniente. No sé si me dejo entender hasta ahí. Solamente es para que ahorita, ahorita los que no tienen ni pro ni créditos. O sea, están con el plan gratuito, por decirlo así. ¿Sí? ¿Sí me siguen? No es para todos. Los que tienen pro, sí tienen cómo se llama el tema de, del acceso. ¿Sí? Ya, perfecto. Sigamos entonces . Bueno, mmm, no está de más decirles el tema de su equipo. Sí, ¿por qué? Porque como les vuelvo a repetir, va a correr en una ter-- va a correr en la terminal, una laptop, una i5, a partir de una i5, i7, una RAM son siete también, ¿no? Dependiendo su, su equipo, pero mayormente mínimo cuatro gigas, pero recomendado ocho gigas. Si tienen una de dieciséis, mucho mejor, ¿no? Ya sería excelente. Eh, ahora, sí quiero preguntar porque el ID que vamos a usar es VS Code. ¿Cuántos tienen VS Code y cuántos no? No sé si alguien no tiene y me dice: "Yo no tengo", para poder ir ya también teniendo en cuenta eso . Todos tienen en tienda entonces, ¿sí? Ya. Bacán. Bueno, vemos lo que es el tema de, de la instalación para ver las versiones que ya las vamos a ir utilizando, ¿no? Mayormente se utiliza este, lo que es el NP Install. Eh, mayormente lo que utilizamos Windows, dependiendo también el tema del, de su procesador . Bueno, ¿qué es Cloud Code? Es como... ¿Qué es Cloud Code? Un asistente, pero un asistente de código. Así como cuando le preguntan a un OpenAI, a Gemini, a Cloud en su versión free, hazme esto, ayúdame en lo otro. Pero acá es para nosotros, para desarrolladores, para que los-- nos ayude a codificar mejor haciendo asistentes virtuales, páginas web, X, Y, Z, en los proyectos que nosotros queramos explo-explotar las herramientasLo bueno, pues que vive en nuestra terminal. Nosotros vamos a poder usarla, nos va a dar recomendaciones. Vuelvo a decir, es como un asistente que vas a tener al lado y te va a ayudar a, a, a ejecutar mejor comandos, a ver qué errores tienes. Pero también hay que saber usarlo. ¿Por qué? Porque es comooo-- es como es en la nube. No sé si alguien ha trabajado con GCP, con Azure, eh, AWS, y ustedes saben que si más lo dejas, te consume más. Entonces, también por eso es que ahí está una estrategia de costos. ¿Por qué? Porque si también nosotros vamos a la locura y preguntamos, le preguntamos, nos vamos a gastar más nuestros tokens. Nuestros tokens son las palabras. Acá cada token es la palabra, las palabras que nosotros le damos como input y las que salen como output. Entonces, eso hay que tener en cuenta. Como vuelvo a repetir, como-- pongámoslo así, si alguno ha trabajado en la nube, mayormente eso, mientras más me, mmm, tengo que saber controlar mi costo. ¿Sí? ¿Alguna consulta ahí? Bueno, una pequeña comparación con otras herramientas. La, la, la mayor eficiencia que ahorita mayormente se ve en lo que es Cloud Code es que a diferencia de GitHub Copilot, el Cursor, el ChatGPT, o sea, es mucho más potente. Si ustedes no sé si han comparado en inclusive en el free, le pides algo a, a ChatGPT, o sea, Cloud es mucho mejor programando. Hay que tener en cuenta la historia de Cloud, que es, eh, salieron de los de OpenAI, de los de ChatGPT. Entonces, cuando ellos se salen de OpenAI, fundan lo que es Anthropic. Y lo-- y su, su, su código, principalmente, porque si ustedes se dan cuenta, Cloud no es que te haga imágenes tipo ChatGPT, tipo Gemini, eh. No es que tú le pidas a-- no. Más que todo es para programar. Ese es el, el potencial de que te lea las bases de datos. Tú le dices: mira, lee tal carpeta, quiero que semanal me hagas, qué sé yo, ustedes tienen un reporte, pongámoslo así, de costos. Pones ahí tus facturas y le dices: mira, lo puedes programar inclusive la hora, qué día de la semana y te lo procesa un informe. O sea, llega a tu local. Ese es, esa es la, la potencia actual-actualmente de Cloud Code. Bueno, eh-
+Speaker 6
+Permiso, profe, no me quedó claro eso de la potencia de Cloud Code. O sea, en, en sí para el enfoque de programar, punto. En dar code, en dar código.
+Speaker 1
+Claro. Mira, es muy potente en el aspecto que una, compila los errores, ¿sí? A diferencia de ChatGPT u otras, eh, o tipo Ge-- Gemini. Gemini está también avanzando mucho, pero está en su entorno. ¿Cuál es su entorno? Drive, Calendar, X, Y, Z. Pero Cloud también se puede conectar inclusive a Gemini y a yo-- y a otras herramientas. Por decir, pongámosle, yo quiero hacer una página web de X cosas. Te ayuda parte del código. Tú le puedes crear un ambiente que es-- le vamos a poner el cloud.md, donde te iba creando las carpetas. Tú le dices: mira, quiero esta imagen. O sea, tú ya le das su repo, un repositorio donde él va a entrar a tu máquina local. Por eso es que le decía que la máquina mínimo ten-- tiene que tener cuatro gigas de RAM para que comience a correr y comience a ayudarte dentro de tu, de tu, de tu código. La idea de Cloud es que te ayude a desarrollar tu proyecto, pero en línea. Actualmente, si tú le preguntas a otras IAs, subes, no sé si alguien lo ha hecho, sube un extracto de código, te lo hace, sí te co-- te hace el código, pero tú no tienes cómo probarlo. Si está bien, si está mal. No sé si les ha pasado que a veces piden y les sale error, eh, no corre bien, el log sale con errores. Y lo que te ayuda aquí, tipo Copilot, porque Copilot también hace parecido, va contigo programando a la mano. Ejecuta test, maneja el Git. No sé si hasta ahí me, me dejo entender.
+Speaker 6
+Sí, sí, va, va, va claro. Es un poquito más, eh, intensivo a la ho-
+Speaker 1
+Más concreto. Exacto. O sea, es como vuelvo a repetir, tú le das permisos para que haga y deshaga en tu máquina, por decirlo criollamente, ¿no? Tampoco es así, pero tú le das una carpeta y ahí sí hace y deshace. Tú le das un local, tú le dices: mira, aquí vas a trabajar, aquí está mi proyecto, no te vayas a otro sitio, solo aquí, y me vas a ayudar a hacer mi página web, mis informes, mi app, qué sé yo. Di-- porque me imagino que ustedes vienen de diferentes rubros, no sé sus rubros, pero e-esa es lo-- la potencia de, de Cloud, que tú le puedes inclusive poner, qué sé yo, modelos. Yo, yo personalmente, cómo me gusta usarlo a mí, modelos. Yo hago modelos para lo que es buró, hago lo que es, ¿cómo se llama? Modelos de cobranzaXYZ. Entonces lo que hago yo es inclusive decirle: "Mira, esa es la base de datos y ayúdame a, qué sé yo, a hacer la limpieza, a hacer el análisis univariado, multivariado, bivariado", no sé si alguien trabaja con modelos. Entonces, y te, te puede ayudar. Claro que tienes que tener tú el conocimiento previo, porque también [risas] tampoco es magia todo, pero te ayuda bastante. Por decir, tú no puedes subirle una base de datos a ChatGPT, se te pierden los token. Por eso es que aquí es bueno también ver el tema de los token. ¿Por qué? Porque depende tu consumo, tú vas a-- el-- la inteligencia va a poder ir a leer todos tus archivos, el consumo y eso te lo va a devolver, pero dependiendo de lo que tú quieras.
+Speaker 6
+Gracias.
+Speaker 1
+Sí, bueno, modo depuración, modo por defecto, el plan mode y el print mode. Ya eso lo vamos a ir viendo ya en el, en la consola. Bueno, instalación. Ahí sí quiero saber cuántos ya los tienen instalado como para ir instalándolo en, en línea, ir aprovechando. No sé si alguien... Mira, quiero-
+Speaker 6
+Dime, adelante.
+Speaker 1
+Sí, sí te escucho. No, no, quería ver si al, al-- como yo ya lo tengo instalado, tal-- bien, no, sino que quería ver alguien que no lo haya instalado como para que quede grabado, que proyecte su máquina e irlo guiando para que pueda instalarlo.
+Speaker 6
+En mi caso, tal vez yo quiero saber si aplica o no. Yo lo que hago es, eh, tengo la instala-- el-- la extensión en, en Visual Studio Code, entonces yo me puedo comunicar con él.
+Speaker 1
+Sí, sí.
+Speaker 6
+Y, y ya he creado carpetas, eh-
+Speaker 1
+Sí, sí, sí, así es.
+Speaker 6
+Aplica. Okey.
+Speaker 1
+Sí, así aplica. Sí. Alguien que no lo tenga o si ya todos lo tienen, no sé. [carraspeo] Claro, es como-- ¿Puedes proyectar, por favor?
+Speaker 7
+Sí, señor. De hecho, acabo de adquirir el plan. Entonces, aprovechemos de una vez. Yo estoy acá. Estoy acá. Ah, bueno, no sé si están viendo mi pantalla ahí.
+Speaker 1
+Sí.
+Speaker 7
+Listo. ¿Qué necesitamos? ¿El Visual?
+Speaker 1
+Sí. Eh, sí tienes el Pro, ¿no? El-
+Speaker 7
+Sí, señor.
+Speaker 1
+Sí. Ya, perfecto.
+Speaker 7
+Eh, de hecho, por aquí creo que dice. Sí.
+Speaker 1
+Sí, perfecto.
+Speaker 7
+Listo. Entonces, déjame... Hasta mi Visual no tengo ninguna carpeta ni nada. No sé si necesitamos algo en particular o qué necesitamos.
+Speaker 1
+Ya, mira. Ándate aquí al, al costadito. Ahí vamos a hacerlo tipo extensión y con otro alumno lo vamos a hacer en terminal, que va a funcionar igual los dos, como para que tengan los dos. Ahí busca Cloud Code.
+Speaker 7
+Creo que se va a tomar un tiempito. Ah, bueno. Sería esta, ¿cierto? ¿Sería esta la, la extensión o...?
+Speaker 1
+Sí, esa es.
+Speaker 8
+La instaló.
+Speaker 1
+[carraspeo] Sí.
+Speaker 7
+Ahí está. Todavía, todavía. Esto en teoría no se demora nada, ¿no? Yo instalo extensiones y esto es dos clics y sale rápido.
+Speaker 1
+Al costado tiene que salirte cuando ya está. Es el mismo símbolo de cloud. Ya ahí ya sabemos que está. Pero puedes abrir el-- y puedes loguearte, porque nos va a pedir loguear.
+Speaker 7
+Pareciera que el, el Visual está descargando también una nueva versión del editor.
+Speaker 1
+No, pero arriba te das cuenta que está cargando todavía.
+Speaker 7
+Sí.
+Speaker 8
+También es por el consumo de Internet que tienes cuando estás compartiendo pantalla y el Meet.
+Speaker 1
+Sí, también.
+Speaker 7
+Sí, la de Teams también jala bastante. Voy a darle compartir un momentico y apenas quede lista les, les cuento.
+Speaker 4
+No se le escucha, profe.
+Speaker 1
+¿Por qué--? ¿Ahí sí me escuchan?
+Speaker 4
+Sí.
+Speaker 1
+Hola.
+Speaker 4
+Sí.
+Speaker 1
+Ya.
+Speaker 4
+Sí.
+Speaker 1
+¿Por qué el, el, el cloud.md es muy importante? Porque tampoco es bueno darle el acceso completo a tu máquina. Entonces, tú desde ya tienes que decirle, ya cuando lo veamos en las siguientes clases, porque esta clase, como vuelvo a decir, más que todo es más introductoria al tema de la instalación. Eh, ya en la segunda clase, donde vamos a ver inclusive creo el, el database ya más avanzado para el tema de sus proyectos, eh, es bueno sí o sí decirle: mira, ¿sabes qué? Tú vas a trabajar sobre esta, esta carpeta. Entonces, ahí todo lo que haga, el tema de ya los comandos que vamos a ver para optimizar tokens, eh, los archivos lo va a leer directamente desde acá. Por eso es muy importante que se defina esta carpeta, porque si ustedes no lo definen va a buscar el, el, el, el, el stack y cuando-- y va a demorar más, va a consumir más. Entonces, ya es un tema de buenas prácticas. Creo que aquí la mayoría ya tiene un poco de conocimiento en lo que es, eh, desarrollador, como desarrollador y ya es un tema de buenas pra-- así como lo hacemos en, qué sé yo, cuando programamos en, en Java, en otro lenguaje, igual acá como buena práctica es ponerle una carpeta que va a ser donde vamos a alojar todo, donde le vamos-- lo vamos a entrenar, le vamos a decir: mira, tu función es esta, quiero que, qué sé yo, eres un desarrollador de apps, XYZ, eres un desarrollador de páginas web, como ya nosotros definamos qué nos va a hacer. Y le podemos dar inclusive, eh, herramientas. Mira, básate en esto. ¿Para qué? Para que sean-- no gastemos tanto token y solamente se aloje ahí. ¿Sí? No sé si me dejo entender de la importancia de, de esta carpeta.
+Speaker 4
+Sí, no, ha-hasta cierto punto había comprendido, sí, que cloud.md es una memoria que, que él tiene y va, va entendiendo, pero-
+Speaker 1
+No, no, es una carpeta.
+Speaker 4
+Ah, okey.
+Speaker 1
+Claro, que es que, eh, bueno, la memoria a corto plazo es el caché, que lo vamos a ver también, que también, eh, nos ayuda para recordar el tema de los token que ya hemos hecho. Por decir, no sé si cuando ustedes, eh, conversan con, con Claude en su día a día y le dicen: mira, yo me llamo XYZ, tengo-- ayúdame en esto. Y te va recordando, ¿no? Te va recordando. Esa es memoria, eh, esa parte. Pero aquí más que todo es, ¿como, como les explico?, donde Claude va a desarrollar todo lo que es el, el análisis en esa carpeta, ¿no? Un ejemplo: tu proyecto tú lo creas ahorita en DataPad, una carpeta, pones cloud.md. Si tú tienes otra carpeta, trabajo uno, no se va a ir, no va a buscar. Si tú le dices algo, no va a buscar en esa carpeta, solo va a buscar en la carpeta cloud.md. No sé si hasta ahí me dejé entender. Todo lo que-
+Speaker 4
+Donde está el proyecto.
+Speaker 1
+Claro, ese es el proyecto. Ahí lo va a buscar. Sino que acá nosotros le llamamos cloudmd, punto m d. Y ahí es donde va a buscar el tema de tu, de tu proyecto.
+Speaker 4
+Profe, ya, ya instaló la extensión, ya está.
+Speaker 1
+A ver, proyecta, disculpa.
+Speaker 4
+Listo. Vamos a robarle pantalla. Eh, ¿ahí están viendo mi pantalla?
+Speaker 1
+Sí, mira, al costado se creó ese tipo, el, el logo de Claude en la parte superior derecha. Ese anaranjadito arriba. Exacto. Ya, mira. Ahí, como para los que compren también, ahí déjalo, por favor, como para que los com-- para los que compren créditos, ¿sí? El primero es si tú ya tienes una suscripción pro, que es donde tú vas a entrar o, o una suscripción max, ¿no? Que es un poquito más cara. Para los que tienen créditos, es la segunda, que utilizan API, ¿sí? Esas dos vamos a, a nosotros-- en tu caso, dale clic arriba, porque tú tienes una suscripción, no usas... ¿O tú usas API? Disculpa.
+Speaker 4
+No, una suscripción.
+Speaker 1
+No, no, arriba entonces era. O le, o le di-- ¿sí le diste arriba?
+Speaker 4
+Sí, solo que le di copiar para poderlo abrir acá en el, en este-
+Speaker 1
+Ah, sí. Ábrelo. Ahí te va a pedir loguearte y ahí te logueas, todo.
+Speaker 4
+Aquí lo autorizamos.
+Speaker 1
+Autoriza. Cierra.
+Speaker 4
+[carraspeo]
+Speaker 9
+Listo. Creo que ya.
+Speaker 1
+Sí, por decir hola ya, ya, ya, ya tarde. ¿Alguien más, porfa, que tenga crédito?
+Speaker 9
+Profesor, yo tengo una pregunta o una duda-
+Speaker 1
+Sí.
+Speaker 9
+Mejor dicho. ¿Cuál es la diferencia? Porque yo he escuchado que usarlo en Visual Studio Code, lo que es el cloud, el cloud code y la-- usarlo en, en la terminal como tal en el CM, CM dos. En teoría para sacar el mejor provecho del cloud es mejor usarlo en la terminal.
+Speaker 1
+Sí y no. ¿Ya? ¿Por qué? Porque si bien claro en la terminal es-estás, eeeh, entre comillas, eh, el tema de recursos, pero en el IDE, porque tú sabes que Visual Studio Code es un IDE, eh, te va a ayudar mejor el tema de vis-visualización. No sé si puedes abrir un ratito porque mi, mi Visual Studio lo tengo en mi otra máquina para la segunda clase. Aquí estoy en otra máquina, no me podía loguear. ¿Puedes abrir, eh, ahí quien se logueó al toque? Déjalo ahí en la pantalla para hacer un... ¿Por qué? ¿Por qué es mejor has, eh...? Por un tema de, de, de orden. Yo lo voy-- si ustedes lo ven para un tema de usarlo sí o sí solo en, en lo que es terminal, perfecto también. Pero aquí cada vez que us-- que Clau les cree un C, un HTML, un C++ que se yo, les va a aparecer y ustedes lo van a ver ahí al toque en, en línea, por decirlo así. Ustedes van a ir viendo que crea, que no crea. Eh, to-todo eso ustedes van a poderlo ver visualmente mejor. Por eso, si lo vemos desde el punto de vista visual, que cuando tú le digas a, a, a Clau, qué sé yo, eh, ayúdame en esto, mira, quiero hacer esto. Mientras él va codificando, tú vas viendo lo que va creando. Inclusive tú le puedes decir mientras va: ¿sabes qué? Esto-- sigue codificando y tú le puedes escribir esto, añá-añádame más. Eh, qué sé yo. Le pedí tres tareas. En la primera tarea, ¿quieres algo más? Tú le puedes seguir escribiendo sin que se detenga. Ojo, mira el tema de su programación, de lo que está haciendo. Entonces, si tú lo ves como recursos, sí, pero si tú lo ves como orden de querer ir viendo qué está haciendo, qué te va creando en la carpeta que les indiqué, la cloud punto md que vamos a utilizar, sería mejor utilizar un IDE. Puede ser Visual Studio Code, Antropic. He visto que algunos están utilizando Antropic. Ya depende de, de, de cómo se llama, de, de cómo tú lo manejes. Pero mi recomendación por el tema de, de ir viendo el orden que va creando, qué es lo que estoy haciendo, eh, sería mejor utilizar un IDE. ¿Sí? No sé si ahí quedó un poco claro.
+Speaker 9
+Muy bien. Sí, sí, gracias.
+Speaker 1
+Sí, más que todo es orden. Yo sí les digo, les recomiendo porque a veces no, no, no falta. A mí me ha pasado esa carpeta cómo se creó, porque a veces recuerda, si tú no eres muy específico, eh, comienza a crear las carpetas y a la última a veces esos detallitos, si tú no eres muy específico en el prompt, que eso también después lo vamos a ver, eh, vamos a tener muchas dificultades cuando comience a crear. No mucho, porque yo creo que la mayoría tiene experiencia desarrollando, pero sí hay un poquito de, de, de ese pequeño tiempo muerto, por decirlo así.
+Speaker 9
+Profe, yo tengo otra pregunta. Yo no sé si me estoy adelantando y usted me dice si, eh. Fíjese que yo usé Windsor hace unos dos meses.
+Speaker 1
+Ya.
+Speaker 9
+Levanté el requerimiento de, de un usuario. Bueno, de hecho hice dos, dos, dos, dos proyectos, pero los hice como, como prototipos. No los hice-- sí eran funcionales, pero para mí eran prototipos. Entonces-
+Speaker 1
+Claro.
+Speaker 9
+Capturé la, la necesidad del usuario, la capturé, yo diría en un noventa y ocho por ciento, noventa y cinco por ciento. La codifiqué con Windsor, hice el prototipo como tal, se lo fui mostrando si él se ajustaba al programa a lo que ellos querían y al final llegué a lo, a la necesidad puntual de lo que ellos necesitaban. Por supuesto, ahí podían ingresar datos, consultar lo que querían porque era funcional, pero, eh, no había reportería porque no lo hice. Eh, entonces solo hice el prototipo y de ahí mandé a desarrollar el, el programa. Ya capturada la necesidad del usuario, lo mandé a desarrollar. No le digo que lo hice yo, no lo desarrollé porque yo desarrollé en su momento de programas de escritorio.
+Speaker 1
+Claro.
+Speaker 9
+Nunca, nunca web, eh, para nunca me metí a desarrollar web, entonces solo hice a nivel-- lo desarrollé a nivel de escritorio hace muchos años. Entonces lo que le quiero decir es que yo lo utilicé para hacer prototipos. No hice este programa, no lo utilicé como para poderlo ponerlo a producción. La idea es saber si este programa al hora de utilizarlo son ideales para ponerlos a producción, o sea, funcionales, ¿verdad? Como tal.
+Speaker 1
+Claro.
+Speaker 9
+Y público.
+Speaker 1
+Claro, claro. Eh, hay que entender, tienes toda la razón, eh, nos va a ayudar bastante, claro está. Pero ya cuando hay que poner algo en producción ya es un tema. Por decir un ejemplo, si es página web, un hostingYa hay hosting muy baratos, dependiendo también, pues, en qué rubro trabajas, porque a veces el tema de seguridad de la información... Yo qué no me habré encontrado en el camino. A veces el tema de que no te dejan usar muchas herramientas. Con decirles, por decir un ejemplo claro, en mi caso, yo para que me puedan instalar, mira, VS Studio Code, me lo instalaron después de dos años, porque seguridad de la información es a veces muy exquisita, no sé cómo será en sus centros laborales. Pero, y eso que es free, ni siquiera hay que pagar una licencia. Pero yo lo que veo que esta herramienta te va a ayudar a potenciar mucho más rápido lo que a ti te llevaría, ponte, hacer una página web, qué sé yo, solo con tus conocimientos, cre-- ponte uno o dos días, pongámoslo así, una página web, ¿no? Eh, no muy tediosa tampoco. Mientras que en Claude tú la puedes hacer en, en un día, en horas, por decirlo así. Pero ya el levantamiento en producción va a depender mucho de qué es lo que has desarrollado, porque si es una página web vas a necesitar un alojamiento, vas a necesitar un ejemplo. Aquí también vamos a ver el tema, lo que es el, el, el tema del repositorio de la data, pero dependiendo del volumen de data, tal vez quieres un repositorio más grande. Sí lo vamos a llegar a ver, pero igual hay que sí o sí, si tú ya quieres ponerlo en producción, comprar, eh, otras herramientas, un hosting XYZ, dependiendo de lo que quieras, vuelvo a decir, para que se ponga en producción. ¿Sí? No sé si me dejo entender hasta ahí.
+Speaker 10
+Sí, profesor, yo más que todo, tal vez no página web, sino que programas transaccionales como tal, ¿verdad? Que haya mucha transacción.
+Speaker 1
+Claro, claro, claro. Pero como vuelvo a decir, [carraspeo] si, mira, eres independiente, gol, porque tú mismo eres, ¿no? Pa, pa-- inclusive si eres, un ejemplo, ¿no? Dueño de tu propia empresa, gol. Pero muchas dificultades cuando nosotros trabajamos para terceros. ¿Por qué? Por el tema de seguridad de la información, que es eso, que tienen que pasar un tema de calidad mientras pasa a producción. Entonces, pero que acá se puede, que, que vamos a hacer algo funcional, claro, pero ya depende de cómo ustedes en cada uno de sus centros laborales o cómo, cómo vean sus proyectos, ¿no? Ahí veo la mano levantada, ¿sí?
+Speaker 11
+Sí, eh, tengo una pregunta, Gabriel. A mí me sale un mensaje que dice que, que llegué a mi límite, ¿no? Parece que Antropic pone como límite diario, dice que se resetea a las diez de la noche. Pues porque he estado utilizando Claude para, para otras cosas.
+Speaker 1
+Sí, sí. Tienes la pro, tienes la pro.
+Speaker 11
+Tengo la pro. Eh, y mi, mi pregunta es-
+Speaker 1
+Eso sí.
+Speaker 11
+Mi, mi, mi pregunta, yo, yo he escuchado que uno puede poner como una especie de, de modelo de fallback, es decir, poner por ejemplo un modelo de estos chinos que también, pues son buenos para gen-generar código y eso.
+Speaker 1
+Sí.
+Speaker 11
+¿Eso cómo se hace?
+Speaker 1
+Ya, mira, eso, bueno, no, sí lo consulté en, en este, el tema del curso, sino que aquí en el, en, en este curso sí vamos a ver netamente con Claude. Pero, eh, lo puedes hacer con Llama, por ahí te dejo la idea. Dios mediante, vamos a ver también eso, tal vez en otro curso, no sé, pero les dejo la idea. Lo pueden hacer con Llama y sí funciona bien, pero hay que tener en cuenta mucho el tema de tu estabilidad en Internet. Y también te da un límite de tokens. Todos dan límite de tokens, por más gratis que sea, Grove, que también te da gratis, Llama, Mistral, por ahí he visto que también les da un límite. ¿Sí? Igual se te va a acabar. [risas] Pero tú puedes tener varias cuentas free y pueden usarlo. Pero sí les dejo, pueden investigar por ahí. Pero este curso sí vamos a ver netamente con, con, con Claude, ¿no? Con el tema de, de las herramientas de Claude. Que no, que-
+Speaker 10
+Profe.
+Speaker 1
+Pero ahí tienen una debilidad, yo lo he usado. Eh, la debilidad es que a veces, eh, sí es bueno, pero no al cien por ciento como tener, eh, la herramienta pagada. Eso sí ténganlo en cuenta, ¿no? Que les va a ayudar muchísimo, ah, muchísimo. Yo utilizo a veces varias cuentas free, tengo para varios modelitos, pero mejor es un tema de, de pago que se va a enseñar. Sí, otra consulta ahí.
+Speaker 10
+Profe, ¿y Gemini o ChatGPT cómo-- qué tal es para la programación?
+Speaker 1
+Mira, mi opinión, mi, mi opinión, no, no, no sé, mi, mi opinión, porque también lo he utilizado. Yo he utilizado OpenAI con N8n, no sé si alguien habrá utilizado. Eh, te ayuda, pero ya tienen los modelos. Más que todo yo lo he utilizado para hacer a gente ya no tanto con programación, porque sí tiene buenos modelos. Sí te ayuda cuando tú le dices, te, te ayuda si te da código, pero también comete errores. Gemini más que todo yo lo veo un poco por el tema de conectado con Google, más que todo, bueno, el tema de, de es-- que sí te da inclusive más token, se, eh, que OpenAI, que Claude. Tú le puedes tener una conversación muy larga con Gemini y cómo se llama y, y, y normal. Entonces, Gemini para mí más que todo es si tú quieres buscar información, tipo Perplexity, no sé si habrán escuchado de esa IA, que es muy buena para buscar información. Pero para codificar, si bien Gemini está haciendo mucho con lo que es Antropic, porque Antropic es de GeminiDe Google también. Eh, te conecta tu Drive, todo. Pero no es que te lo, te, te lo corra. Yo lo he utilizado, me hice un repo pensando que me iba a correr, subí bases de datos a mi, a mi Drive. Me compré una cuenta pro pa probarlo nada más. Me compré una cuenta pro, eh, le dije, le di la ruta, pero no te lo corre. No te logra correr. Te dice: "No, no puedo correrlo". Entonces, si bien lo conecta, pero es solo para que como tú bajes la información. Te diga: "Mira, acá tengo este archivo", pero no es que lo va a correr. No es como Claude, vuelvo a decir, que tú le dices: "Mira, esta es mi carpeta", corre y busca y navega, comienza a buscar. Y si tú le dices: "Córreme un modelito", qué sé yo, unnn deserción de fuga, pongámosle, un modelo de microfinanzas, te ayuda bastante, te lo corre. Mientras que Gemini no, te dice: "Mira, yo no soporto hasta..." Creo que son cincuenta megas que te soporta Gemini. Más de eso no te puede soportar. Entonces, para programar hasta ahorita, Claude. Mil veces Claude. Porque está más enfocado, si usted ve en sus paper, para programación. Inclusive, eh, hasta Estados Unidos para la guerra con Irán lo han utilizado. Ya salieron las noticias, ¿no? Porque es muy potente en el tema de programas. Sí, ¿hay otra consulta?
+Speaker 12
+Profe, ¿me escucha bien?
+Speaker 1
+Sí, te escucho muy bien.
+Speaker 12
+Okey, una pregunta nada más. Si yo tengo Antigravity y tengo la, tengo los modelos de ahí de, de Antigravity, ya, ya sé que tengo la parte de, de Claude y Gemini para programar. Y lo combino con, y lo combino con, con este, con Claude Code a efecto de, de, de usar CLI. Eh, ¿lo ha intentado usar eso usted?
+Speaker 1
+Sí, sí, sí, justamente en Antigravity me la habían recomendado también unos amigos. Pero, eh, con Visico yo veo lo mismo hasta ahorita. No, no veo ese diferencial, como te digo. No es que agarres y, y como te digo, o sea, eh, puedes igual con-- co-- hacer tu carpeta Claude punto MD. O sea, es, es lo mismo. Sí tiene ese-
+Speaker 12
+Lo mismo.
+Speaker 1
+Claro, sí tiene ese apoyo de la nube, pero tendrías que tener más recursos. También te, te atrapa un tema de costos. Tienes que comprar acá el tema del modelo-
+Speaker 12
+Ajá.
+Speaker 1
+Comparar el tema-- Si bien tiene una versión free, que bacán, pero si quieres mejorar, tienes que comprar la versión de costo. Visico, mayormente, como es free, eh, para mí es más manejable hasta ahorita. Pero no sería nada, dije, [risas] nada malo indagar, ¿no? Si van creando más herramientas. Vuelvo a decir, eh, Gemini tiene un gran potencial por el tema de, de, de Google, de sus herramientas, pero todavía no-- yo opino que no logrará hacer ese match. Si el día que Gemini agarre y con tu Drive no es que te lo baje, tú digas: "Mira, ahí búscame a, a, en esa base de datos a Pepito los Palotes" y te lo encuentre, va a ser un buen. Pero ahorita no hace eso. Tienes que bajarlo al, a la consola, al, al, a Gemini para que recién lo lee. Como tiene un límite, ese stopper tenemos. Si no tuviera ese stopper, yo creo que fuera muy potente. Porque con su nuevo modelo, el, si no me equivoco, el tres punto tanto, no me acuerdo ahorita. Sí, sí es bueno.
+Speaker 12
+Gracias, profe.
+Speaker 1
+Hay otra ma-mano levantada, ya para tener unos cinco minutos de receso para pasar-
+Speaker 4
+Hola.
+Speaker 1
+Sí.
+Speaker 4
+Sí. Ah, eh, quería consultar cómo es que se manejan en paralelo múltiples agentes. Eh, ¿es posible o no?
+Speaker 1
+Múltiples agentes. Sí, ¿escuché bien?
+Speaker 4
+Sí. Sí, como en paralelo.
+Speaker 1
+Tipo, tipo N, tipo N8n, algo así.
+Speaker 4
+Sí, algo así, como para estar haciendo múltiples tareas.
+Speaker 1
+Ah, ya. Claro, tú, o sea, vuelvo a decir, mira, yo les soy bien sincero. Eh, en otros, bueno, eh, cursos hemos hecho-- porque ahorita, bueno, ustedes son más especialistas hasta donde tengo el perfil de ustedes. Pero hay, hay gente que no sabe ni, ni programar y logra hacer muchas cosas. Va a depender qué tanto tú piensas cómo va tu proyecto. Gente que no sabe puede hacer app, puede hacer multiagentes. Todo depende de la programación y las herramientas. ¿Por qué? Porque ahí sí te digo, mira, para un multiagente necesitas memoria, ¿sí? Y a veces la memoria free no te, no te va a alcanzar. Un ejemplo, quiero un multiagente para redactar, eh, qué sé yo, texto, otro para darle PDF, otro para enviarlo por correo. ¿Sí? Todo eso lo juntas y sacas tú tus agentes, pero necesitas bastante recursos. De que se puede hacer, se puede hacer. Por decir un ejemplo, que ese sea tu proyecto aquí en el tema del, del curso. Bacán. Pero vas a necesitar de varias herramientas. No sé si alguien ha utilizado, eh, el tema de la base de datos de Google, Fire, que te da un cierto límite, creo, no me acuerdo ahorita. Pero por decir esa, es muy buena para empezar a hacer aplicaciones, para empezar a hacer, eh, apps, porque te-- tienes un espacio en tema en la nube, eh, gratisIgual para cada proyecto que usted tenga, tipo el, ah, eh, lo que me indicas de multiagente, vas a tener que ver qué voy a utilizar. Memoria, el tema de, de APIs. Un ejemplo, una vez, eh, para Caja Piura fue que me pidieron, eh, que pase de, de voz a texto y te lo reconozca. Si bien tú lo puedes hacer con Python, pero igual OpenAI tiene cómo se llama ya para hacerlo más rápido. Entonces, bien tú lo haces, tú lo programas, bien tú utilizas un, un-- otra API que te pase ya de texto a voz rápido. Va a depender de qué, de qué tú quieras de tu multiagente, qué va a hacer. Va a convertir en PDF, va a responder llamadas, va a responder WhatsApp. Dependiendo de toda esa gama, yo siempre digo: cuando ustedes quieran hacer algún proyectito, primero sí o sí es aterrizarlo, qué es lo que quiero hacer, y después ir viendo: mira, para esto voy a necesitar todas estas herramientas. Pero que lo pueden hacer con Claude, lo pueden hacer. Vuelvo a decir, yo he visto y doy fe que Claude es muy potente programando, no programando. Y peor nosotros que tenemos base programando, lo que, por decir un ejemplo, nos tardaba dos, tres días, en un par de horas lo puede hacer fácilmente. ¿Por qué? Porque cuando salta el error, nosotros podemos identificarlo más rápido leyendo los log que personas que no saben. Entonces, eh, es mucho más fácil para nosotros en este caso. No sé si ahí tienes otra consulta.
+Speaker 13
+[chasquido] Eh, no, es Eduardo, por cierto. Eh, quería agregar a su comentario. Creo que también la pregunta iba orientada a tener varias tareas de Claude al-- corriendo al mismo tiempo. Eh, en el-- en ese particular, digamos, lo, lo que es-- lo que se recomienda, porque estás trabajando en un solo contexto, la idea es que puedas tener múltiples contextos al mismo vez para trabajar en diferentes tareas al mismo vez. Si eso es así, lo ideal es seguir tal vez un, un work tree structure donde puedas tener varias ramas en las que puedes estar trabajando en paralelo con varias instancias de Claude corriendo al mismo tiempo. Ahora, esas instancias también pueden correr tareas en paralelo. Eh, ahora Claude soporta una cosa que vos le podés decir: quiero que hagas un team of agents que haga esta tarea y, y él se va y, y hace la tarea en paralelo con ese equipo que vos tenés. O le podés decir que sean, si todos son frontends, entonces le podés decir: quiero hacer todas estas tareas en paralelo, en frontend al mismo tiempo para terminar esta tarea específica más rápido. Eh, sí se maneja un poco la dependencia de acciones, eh, de qué estás haciendo con una cosa u otra cosa. Pero, pero es posible. Hay una-- hay varias herramientas, entre ellas les recomiendo, eh, Superset y, eh, Conductor, que son las que-- con las que puedes correr work trees menos complicado que utilizar la CLI.
+Speaker 1
+Una otra consulta, si no para pasar unos cinco minutos nomás, eh, y poder continuar.
+Speaker 3
+Gracias al compañero por Conductor. Está muy chiva ese tema.
+Speaker 1
+Otra consulta. Ya son las ocho y quince. Ocho y trece acá. Bueno, ocho y veinte retomamos para poder ver un tema de, de código, ¿sí?
+Speaker 4
+¿Hola? ¿Sí me escuchan, no?
+Speaker 3
+Solo bueno. Solo bueno, sí.
+Speaker 4
+Ya continuamos.
+Speaker 3
+Profe, yo quedé en la diapositiva modos de operación. No sé si, si se nos adelantó o más bien me atrasé yo.
+Speaker 4
+¿Cómo, cómo, cómo? Disculpa.
+Speaker 3
+Qued-- qued-- quedó, perdón, quedé en la diapositiva modos de operación. La que sigue es esta o como se-- me perdió una.Ay, perdón, perdón. Sí, la instalación es de Tab.
+Speaker 1
+No, sino que esta parte de instalación [carraspeo] ya-
+Speaker 3
+Ya se dio
+Speaker 1
+...estuvimos con, con el compañero ahí que nos, nos hizo dar. Por eso quería ver si alguien más tenía para hacerlo desde la consola de la terminal. Pero bueno, creo que todos lo tienen. ¿O tú, tú sí lo tienes instalado?
+Speaker 3
+Sí, señor. En VS Code.
+Speaker 1
+No, Claudio, ya como extensión. ¿Sí, no?
+Speaker 3
+Como extensión, correcto.
+Speaker 1
+Ah, ya. Sí, más que todo ese es para el tema de, de la instalación, ¿no? Que ya la mayoría tiene. Antes para no pasarme, tiene razón. No sé si alguien más quiere instalarlo en línea. A ver si, si lo instalamos juntos.
+Speaker 3
+Hasta cierto, hasta cierto punto, eh, tal vez cambiar un poquito la pregunta, profesor. Eh, ahorita que el compañero comentaba, bueno, de, de equipos de agentes, eh, ¿verdad? Usted que tiene más experticia, se podría decir que en una estructura de producción, ¿qué sería mejor? Hasta cierto punto instalarlo en un contenedor. Si alguien no sabe qué es contenedor, es como una s-- una, una cajita en la nube, pero en un contenedor instalarlo en eso o darle un API key. ¿Cuál escogería usted en producción?
+Speaker 1
+Yo un API key.
+Speaker 3
+Muchísimas gracias. Copiado.
+Speaker 1
+Si alguien más para poder... Ya. Si alguien igual en el camino me dice: "Mira, yo quiero instalarlo", nos avisan para poder instalarlo, sí. Ya, aquí tenemos, bueno, una lista inicial de comandos en lo que es, eh, que vamos a ir utilizando a lo largo del, de, de los, de las otras secciones. Como les digo, esta, esta parte principalmente es para conocer, ¿no? Yo sé que-- creo que la, la gran mayoría ya, ya ha trabajado, ya viene trabajando y más que todo es como para un refresh frente a las otras ya clases, ¿no? Un index, siempre el tema para iniciar tu proyecto es cuando-- esto te ayuda cuando tú le guardas, eh, por decir que, qué es lo que va a hacer este, este... Em, en este caso, un desarrollador de apps. Lo recuerda, recuerda el tema de, de cosas puntuales. Yo me llamo Gabriel, ya lo recuerda, ya me dice mi nombre. O sea, todo eso recorre cuando tú haces el inicio, el tema de la ayuda, limpiar, este es muy importante. El tema de costos, aquí te muestra el, el tema de, del, del, del costo, los costos que vas, eh, consumiendo. El tema del modelo, si es Haiku u Opus o Sonnet. Este es muy, muy importante. Este es-- cuando tú tienes en tema de ya vienes hablando, un tema de una conversación, eh, para no gastar mucho un token, esta función se utiliza para comprimirlo y poder, ¿cómo se llama?, eh, no gastar gran cantidad de token. Por esto esta función es muy importante, ¿sí? Bueno, eh, el, el diff, que muestra los cambios, el revert, los cambios que-- deshace los cambios que has hecho, los tag para cambiar de plan y el escape para salir. Bueno, ahora los tipos de modelos. No sé si todos los conocemos, eh, vamos a darle una mirada a cada modelo en general, eh, viéndolo en tema de costos y la potencia. Eh, Haiku es un modelo que se utiliza más que todo para tareas simples, es mucho menos costoso, pero su razonamiento, eh, como inteligencia artificial, pongámoslo así, es mucho más limitado. El Sonnet, que es el más recomendado, el cuatro punto seis, eh, tiene un poco mayor costo, pero tiene una respuesta mucho mejor que el, que el Haiku. Y el Opus, que sí es el más potente, pero es el más caro. Te consume mayor cantidad de-- es mayor, es más costoso. Por eso es que es muy importante conocerlos para saber cuándo los vamos a utilizar. En teoría, en teoría, se recomienda que de tu uso diario, el 10 % sea Haiku, el 80 % Sonnet y el 10 % Opus. ¿Sí? ¿Por qué? Porque en tema de costos, este es para tareas mucho más sencillas que tú le indiques, pero Sonnet creo que es el más recomendado para el trabajo de nosotros, que es el tema de programación. Pero si tienen algo muy complejo, sí o sí es Opus, pero su costo tienen que tenerlo en cuenta que es mayor. Por algo es como cuando ustedes compran el, el plan pro, se paga diecisiete dólares, creo. Y, ¿cómo se llama? El max creo que está como ciento cincuenta dólares. Entonces, es mucho más caro. Y el max trae, creo, el Op-- trae el Opus. Bueno, eh, sí o sí, como les decía, el Opus se considera un, un, un lenguaje mucho más profundo, es un lenguaje mucho más, más, más, más profundo, pero hay que t-- saber cuándo utilizarlo. ¿Sí? Porque si yo voy a utilizar puro Opus, voy a gastar mucho y lo ideal esEh, ver el tema de mis costos. Vuelvo a decir, eh, no es que yo agarre y con cinco dólares, si bien es muy-- para mí es muy para trabajarlo, muy bueno con cinco dólares, pero si es que tú utilizas este modelo, te va a consumir mucho más rápido y vas a tener que recargar. Entonces, eso sí es muy importante. Bueno, aquí hay unos comandos para poder cambiar de modelo. Es, eh, /model cuando quiero hacer el Opus, el, el, el Sonnet y así ¿no? Y el Haiku. Estrategia de costos.
+Speaker 8
+Disculpe, profe. Disculpe, profe. También he escucha-escuchado-- bueno, por lo normalmente uno siempre tiende a usar es el Opus y el, y el que está antes, ¿no? Que no recuerdo el nombre.
+Speaker 1
+El Sonnet.
+Speaker 8
+Sonnet. Eh, pero también he visto que, bueno, el Opus se está usando más que todo, mmm, para la planificación de lo que se va a hacer y el Sonnet es realmente para que el que ejecuta, pero también hay un modelo, eh, bueno, no, no es un modelo, creo que es un plan de modelo que sale ahora, que es el Opus Plan, si mal no recuerdo. Creo que es, es, eh, /model opusplan que él, eh, simplemente agarra y sea-- en todo lo que tenga que pensar primero hace la planificación y después se pasa automáticamente al Sonnet y enseguida comienza a ejecutarlo.
+Speaker 1
+Claro, es comooo, es como, como que primero cuando uno construye el proyecto haces tu GAN. Primero te hace el GAN, el Opus Plan y después ya en producc-- en, en desarrollo, construcción, utilizas el, el, el Sonnet, que es mucho, como te digo, cuesta mejor y tiene respuestas muy, muy aceptables, muy aceptables.
+Speaker 14
+Profe, te hago una consulta. Eh, por ejemplo, cuando se usa en la consola de cloud se puede también escoger los modelos anteriores, por ejemplo, el Opus cuatro punto cinco. Entonces, de pronto yo me imagino que ese es un poco más barato porque es el modelo anterior, eh, pero ¿acá se puede usar los modelos anteriores? ¿Usted lo recomienda o no?
+Speaker 1
+Bueno, yo, bueno, si ustedes-- depende de la tarea, vuelvo a re-- vuelvo a incidir. ¿Por qué? Porque si la tarea no es muy compleja, por ahorrarte, sí. Pero recuerda que cada modelo, si va saliendo es porque tiene un poco mayor de potencia, te va a ayudar mejor, eh, razona mucho mejor, va a tender a cometer menos errores, porque no es que-- eso sí recuérdenlo, no es que tampoco esto es-- te lo va a dar cien a cien, ¿no? Va a haber un margen de error. Siempre hay un margen de error pequeño. Pero le-- la idea de que cuando el, el modelo es mejor es que el margen de error se reduzca. Y nosotros no tener ese, esos tiempos muertos en, en estar corrigiendo, en mirar el reloj, en estar viendo dónde se cayó, qué es lo que pasó. Entonces, eh, [carraspeo] claro que ahí también es el, el comportamiento de los, de los prompt, que es muy importante, pero, eh, para mí siempre es mejor utilizar los últimos modelos. Pero como ahí un, un compañero de ustedes dijo: "Mira, pero yo he escuchado que se te-- que se puede utilizar con, con, con APIs, con los key de, de AI free, como llama XYZ". Sí, es verdad, lo puedes utilizar, pero te va a limitar también. No va a salir-- el margen de error va a crecer. Entonces, todos esos detalles tenemos que nosotros tener en cuenta. Yo siempre digo: si ustedes quieren iniciar con algo, vean primero, eh, lo mejorcito para que vean la potencia y van probando. Si para ustedes, eh, eh, una versión anterior igual se ajusta a lo que ustedes, eh, van a hacer, lo pueden hacer, pero si no se ajusta, creo que tienen que, que ver el tema del, del costo, que el último les va a ayudar bastante. Es-- yo creo que es suma y resta, ¿no?
+Speaker 8
+A veces es como un pequeño ensayo y error, ¿no?
+Speaker 1
+Exacto. Vuelvo a decir, eh, eh, eh, a veces-- un ejemplo, yo cuando salieron las inteligencias artificiales comencé a comprar todas, a ver, a probar. Y ya dije: no, OpenAI no lo pago. Paga-- sí tengo un API, eso sí, a veces uso el API, pero no lo pago como plan. Solo es cuando yo-- mi consumo. Cuando yo consumo utilizo mi API. Gro, que tiene [carraspeo] un modelo, un API key free tipo Gemini, que es aceptable, y ese lo utilizo para tare-tareas más básicas. Sí utilizo APIs free, eso sí. Gro es muy bueno para, para mí. Gro se comporta muy bien y te da buena cantidad de tokens y los utilizo para algunas cosas. Pero cuando yo ya veo que es una tarea compleja que va a demandar, no utilizo esas. Utilizo ya otras que sí sé que van a responder de acuerdo a la problemática. Por eso es que le, eh, igual para esta sesión, su, su-- el trabajo a hacer aparte del, del test, es que para la otra clase ya traigan la idea de sus proyectos finales para enf-- para ver enfocarnos, eh, como, como las clases también futuras para ir aterrizando también en, en sus diferentes proyectos, ¿no?Porque yo puedo decir un ejemplo, tal vez enfocar algo en microfinanzas, pero la mayoría tal vez no trabaja en eso. Por eso sí quisiera ver más o menos en cómo lo van a enfocar para poder también ver el tema de las siguientes clases y poder también decirles: "Mira, esto se podría mejor manejar así, manejar por acá", dependiendo de la necesidad de ustedes. ¿Alguna otra consulta?
+Speaker 15
+Sí, ahora que me-- perdón, el micrófono. Ahora que mencionabas esto del proyecto, ¿esto es tarea o se lo está, lo está solicitando como una recomendación?
+Speaker 1
+¿Cómo, cómo?
+Speaker 15
+Okey, repito. Ahora que mencionas que para la próxima clase hay que re-- bueno, darle un poco más de forma.
+Speaker 1
+No, como idea, como idea.
+Speaker 15
+Sí, la idea mera-merame-meramente como tal, un objetivo general.
+Speaker 1
+No, como idea, como idea, como idea, porque vamos a ir a esa-- la idea es desarrollarla en el transcurso del curso, ¿no? Pero sí quiero ver el tema de la idea para ver cómo se va a aterrizar en los, en-- porque vuelvo a decir, Cloud es un mundo muy grande. Ennn las ocho clases creo que vamos a tener, pucha, nos va a faltar tiempo, pero por eso es que quiero ver la idea de ustedes, que el último, porque el proyecto, si hay un proyecto final, en-- es lo que me han indicado, que el último tienen que tener un proyecto. Ver la idea, ¿no? Ver la idea en que lo van a aplicar para, para yo, ¿cómo se llama?, también tener en cuenta eso y poder guiar más o menos las clases por esa ruta de ustedes también. Como idea, no es que digo que traigan, muchachos, no. Eso es a lo último, ¿no? ¿Y alguna otra consulta? Sigamos. Bueno, aquí hice un poco de, de estadísticas. Eh, según datos de Anthropic a marzo de 2026, mira, el promedio diario de un desarrollador es de seis dólares, ¿sí? Casi el 90 % gasta menos de doce dólares y el promedio mensual es ciento cincuenta dólares. Por eso, sí hay bastante gente, eh, teniendo en cuenta, pues, el tema del, de, de los costos y ver, pues, eh, cuál nos, nos conviene. Por eso es que es muy bueno saber qué modelos utilizar, por un tema siempre he dicho de costo. Y bueno, aquí los planes que ya, ya la mayoría, bueno, que hemos comprado, hemos utilizado el Pro. Yo sí en su momento he tenido el Pro, pero ahorita utilizo más que todo el API, porque ya no-- poco utilizo el Pro yo, de mi parte. Bueno, aquí lo que les decía, el tema del, del caching, que es muy importante. Eh, simplemente, ya creo que este término es también muy conocido, es la, la memoria a corto plazo. Es sencillo, es su memoria a corto plazo. Si yo ya vengo de una conversación, va a recordar y, y eso nos va a ayudar a ahorrar bastante. Casi más, casi el 90 % es el tema de, del, del tema de, del ahorro también. Es muy importante para, para el tema de, de tener en cuenta los tokens. Eh, vuelvo a decir, aquí es como si estuvieran sí o sí resguardando sus tokens. Entonces, para que alarguen esos cinco dólares, por decirlos, varios días, sí o sí es fundamental ver eso. Entonces, esto, que ya viene embebido ahí en el tema de Cloud Code, ya lo vamos a ver, eh, nos va a ayudar bastante.
+Speaker 15
+Pero una, una, una pregunta, esto de prompt caching ¿es algo que uno pueda accionar o eso automáticamente lo hace la herramienta porque-
+Speaker 1
+Sí, automáticamente lo hace la herramienta. Sí, lo vamos a ver. Ahí lo vamos a ver ahorita. Sí, sí va a dar el tiempo para, para hacer uno. Ya los tengo también.
+Speaker 15
+¿Uste-usted no paga ya el Pro? Paga, paga puro token, nada más.
+Speaker 1
+No, API.
+Speaker 15
+Puro API.
+Speaker 1
+Sí, es que claro, es que yo ya lo uso a mi consumo. Primero sí, utilizaba el Pro porque también consultaba, pero-
+Speaker 15
+¿Cuánto ga-cuánto gasta usted mensual-mensualmente usa-usando eso?
+Speaker 1
+Mira, es que ya son para proyectos. Ya tengo proyectos corriendo y a Pro, ¿qué será? Pues cincuenta dólares, pero que ya corren ya mensual.
+Speaker 15
+Okey, entonces mejor meterle, mejor meterle este, el API.
+Speaker 1
+Para mí sí, vuelvo a decir, porque ya no, no, no, no interactúo mucho. No sé si alguno de ustedes también les gusta interactuar con, más que todo ese tema de su, su escritorio, estar ahí, me, no. Yo prefiero, bueno, ya ahorita también por el tema del trabajo, el tema del API, voy viendo mis costos también. ¿Por qué? Porque así como le, le pasó a tu compañero que les puso un, un stopper, te-- a veces te limita eso. Y más que todo, el API sí o sí es para desarrollar ya. Si ustedes quieren poner en producción, tipo ahora la, la consulta que también hicieron, eh, el API, ¿cómo se llama?, es fundamental. Y aparte, pues por decir, ustedes pongan que dan un agente para X empresa, ustedes ya van, van viendo el costo, que ustedes lo asumen o a veces lo asume la empresa. A mí me ha pasado también que yo he hecho y te-- me dicen: "No, pero yo asumo ese costo. Yo te pago por hacerlo, pero ya los costosYo los pago. Entonces también hay que verlo por ese tema. Pero también hay cuando tú, tú lo manejas, tú, tú, tú estás-- tu servidor, tú lo corres, tienes que ver tu-
+Speaker 16
+Profe.
+Speaker 1
+Sí.
+Speaker 16
+Profe, una consulta, ahora que mencionaba el tema de costos. Vea, si yo sé que es-- usted ya es más experto en esta área, pero hasta cierto punto, si un cliente lo contrata a usted, emprendimiento, digámosle de mascotas. Él dice: "Yo pago todos los costos". Uno eventualmente va a tener que decirle: "Bueno, el modelo necesita veinte dólares mensuales para correr". ¿Eso va por ese lado o no?
+Speaker 1
+Claro, es que va, va a haber también el tema, vuelvo a decir, del consumo. Un ejemplo, en ese de mascotas. Ponga-- póngase que al día solamente lleguen cinco clientes, ¿ya? Que lo utilice como agente, registro, qué sé yo, qué sé yo, tres ideas. Y tu token, ponte que, que estén a un límite de cuántos, trescientos diarios, no, más, mil diarios entre idas y vuelta. Pero esa empresa crece, comienza a consumir más. Y tú le dijiste veinte dólares y ponte que ya no consuma veinte, comienza a consumir cien. Entonces, ahí va el tema de costos y también ven el tema a largo plazo de la explosión de ese negocio. Tenemos que también tener un poco también de verlo del lado del proyecto, cómo va a crecer, si va a crecer, para qué, para que eso lo sepa tu cliente. Mira, ahorita estamos gastando así, pero a medida que esto crezca, va a aumentar también tu costo. No es un costo fijo, es como en la nube, que esto también es, es lo mismo, ¿no? Eh, ese costo aumenta dependiendo del consumo. Entonces, tú no le puedes decir-- si ustedes ya están en este mundo, no le pueden decir: "Mira, tú fijo vas a pagar veinte dólares", porque si es que le crece el negocio, sí o sí va a consumir más. No sé-
+Speaker 16
+Es que uno como tal, uno, uno le das un pequeño aproximado según lo que-
+Speaker 1
+Exacto.
+Speaker 16
+En cierta manera tú sientes que puede hacerlo. Sin embargo, también depende mucho si...
+Speaker 1
+Exacto. Yo siempre, bueno, he dicho que hagan una marcha blanca. Se hace una marcha blanca de uno, dos meses, también día de pico alto, porque a veces pasa. Día de pico de, de alto tráfico, de bajo tráfico. Entonces, tú, tú ya le vas costeando, ya le haces un costo y le proyectas. Es lo ideal. Y también, si es que va a estar en tu servidor, tú también te proyectas. ¿Por qué? Porque ponte que ahorita compres una membresía, lo que algunos yo he visto que hacen, cobran una membresía. Tú cobras tu membresía, ponte X, X, X monto, ¿no? Y esa persona, eh, y por el mismo tráfico, ya no-- ese, esa membresía que tú le cobras ya no te es rentable para ti. Entonces, también es por eso es que hay que verlo. Por eso es que varios, bueno, amigos míos utilizan las, las free, pero dependiendo, vuelvo a decir, de lo que ustedes quieran. Le meten Grow, Llama, y como son gratis, pero ven el límite, es aceptable. Por eso tienen que ver el escalonamiento del negocio. Cuando ustedes desarrollen algo, véanlo a futuro, ¿no? El escalonamiento-
+Speaker 17
+Tengo una pregunta, profe.
+Speaker 1
+Sí.
+Speaker 17
+Este, bueno, la primera es: como hay un montón de modelos, ¿cómo-- a, a, como el ejemplo que dio hace un momento de que, este, eh, primero ocupar un modelo para hacer el análisis del problema y después otro modelo para que ejecute el plan. Bueno, este, ¿cómo sabe que un modelo es mejor para uno que el otro? ¿En dónde dice eso? ¿O es solo por experiencia? ¿Cómo, cómo sé yo qué modelos elegir para una cosa u otra?
+Speaker 1
+Mira, en este, en este caso de, del curso que estamos viendo los tres, también es un poco del expertise. ¿Por qué? Porque yo he visto muchas personas que utilizan el Opus para cosas muy sencillas, que lo puede utilizar también el, el, el High o el Sonnet, ya. Por eso va a depender de, de ti la complejidad. Porque un ejemplo, yo como programador, que soy un programador básico, que estoy empezando, que recién estoy haciendo mis pininos, saliendo y no hacer una-- no sé hacer una función que para otro programador es mucho más fácil y yo en, en mi, en mi-- ese expertise que no tengo, utilizo un modelo muy complejo, yo solito estoy quemando mi stock. Por eso también viene-
+Speaker 17
+Sí entiendo, pero ¿cómo, cómo elijo ese modelo? O sea, este, ¿cómo sabe? Me dice, eh, entonces es pura experiencia nada más. O sea, ¿no hay una página o hay una página oficial, algo?
+Speaker 1
+Mira, va a depender de la complejidad del, del prompt. Más que todo, basate en eso. Si tu prompt es, es, eh, ¿cómo se llama? La tarea que vas a hacer y, eh, lo aterrizas en un plo-- un prompt muy complejo, sí tienes que utilizar un modelo de, de mayor, eh, volumen. Pero si tu prompt es mucho más básicoPor decir, qué sé yo, ahorita vamos a ver un ejemplo. Eh, crea un botón, qué sé yo, quiero ponerle un botón más a la página web. Mayormente se utiliza Sonnet, que son temas más, más, ¿cómo te explico? Mmm, ¿cómo decirlo?
+Speaker 17
+Son más fáciles.
+Speaker 8
+Más simples.
+Speaker 17
+Eso, más básicos. Sí, son más fáciles, eso lo entiendo, pero yo lo-- la pregunta no va enfocada para allá. La pregunta va enfocada: ¿cómo sabe que un modelo es para mayor volumen y otro no? O sea, eso, ¿cómo se sabe eso?
+Speaker 1
+Claro, mira, en, en tema de, de papers no, no vemos eso. Ahorita que está saliendo la ingeniería de Prompt que está saliendo en otros países ya para ver justamente lo que tú dices, el tema de, del prompt. Pero bueno, en lo largo que yo he tenido hasta ahorita, es-- depende mucho de tu expertise. Va a depender mucho de tu... ¿Por qué? Vuelvo a decir, cosas básicas que para ti son básicas, para otras son muy complejos y están solos en su máquina. Pueden googlear, pueden buscar, pero a veces prefieren utilizar otro modelo. Yo te recomiendo, y ahí va mi recomendación, descárguense Grove, ¿sí? Eh, free. Igual les voy a dejar una, una guía y prueben con esa. Si Grove no lo puede responder, que es gratis, recién se van para, para modelos más complejos. Bueno, yo personalmente cuando programo por un tema también de, de costo, utilizo primero, eh, IA gratis. Que hay gratis que, que a veces te dan por cuentas y te ayudan bastante. O tú puedes-- mira, otra técnica que he visto de, de muchos amigos, eh, hay una co-- hay un tema de, de tokens que te da en lo que es escritorio. No sé si todos los que no tienen pro, los que tienen la básica, puedes consultar ahí y va a haber un límite donde el mismo modelo te dice: "No te entiendo, no puedo hacer esto". No sé si les ha pasado. A mí me ha pasado hasta con el de ChatGPT que te dice: "No lo entiendo" o te crea lo mismo. Ya comienza a redundar en lo mismo y, y, o comienza a alucinar, ya te crea cosas que ni tú no le pides. Es ahí donde puedes arriesgarte por un modelo más potente, porque es mucho más amplio. Son-- todos los modelos LLM son redes neuronales, tienen mucho más complejidad de sus, de, de sus modelos mucho más grandes. Entonces, ahí tú te puedes dar cuenta que ya el modelo Sonnet, porque en, en Cloud, en su modo free, te dan un paquete de, de token de Sonnet. Si es que eso ya no lo responde, puedes irte por el más costoso. Pero el más costoso, como te digo, son para tareas muy complejas para mi parecer, que Sonnet, mmm, Sonnet responde mu-muy bien. Muy bien, ya lo van a ver.
+Speaker 17
+Otra pregunta más, profe. Otra pregunta más. Este, eh, en el uso de los tokens, vamos a suponer que, este, ya me consumí mis veinte dólares de, de tokens y todavía no termino el mes. Este, ¿se, se reactivan o cómo...? ¿O se paga la mensualidad por adelantado? ¿Cómo se le hace?
+Speaker 1
+No, no, no. Tú compras un plan mensual.
+Speaker 17
+Ajá.
+Speaker 1
+Sino que ese plan mensual te viene un paquete.
+Speaker 17
+Sí.
+Speaker 1
+Para utilizar Cloud, Cloud Pop. Te viene un paquete. Si tú te es la-- te lo da paq-- un paquete diario. Cuando tú ya, eh, consumes ese paquete, no sé si te ha pasado o a los que tienen free, cuando recién iniciamos estamos que bien bacán alucinándonos y después te dice: "Ya te respondo hasta mañana a las cinco de la tarde". Porque es un límite. Igual te va a pasar, pero al día siguiente te lo van a renovar en Cloud Pop hasta terminar tu mes. Por eso te decía lo que no pasa con lo del-- con el API, porque el API va a depender de tu consumo. Tú te puedes acabar los cinco dólares o ponte que le metas una recarga de, de cien dólares, ponte. Digas: "No, mira, voy a meter". Tú puedes inclusive acabarte los cien dólares en un día si comienzas a estar, estar, estar. Que lo dudo, pero ¿por qué? Porque es tu consumo. No tienes un techo. El techo es lo que tú has pagado, que son por tus tokens. Pero en el pro-
+Speaker 8
+Lo que pasa ahí, lo que pasa ahí es también es que, bueno, si, si se meten en la aplicación de Cloud como tal, en la settings tienen el, el usage, entonces es al uso que le estás dando. Entonces, ahí lo que pasa es que tienes, o sea, cada, cada cuatro o cinco horas, no recuerdo cuánto es, él te da una cantidad de tokens y a la semana tienes otra, tienes otra. Entonces, ¿qué pasa? Tú te puedes acaba-- ir acabando el porcentaje de tokens, eh, de la semana, te lo puedes acabar en un día como te lo puedes acabar en toda la semana. Eh, y cada semana se va renova-- o sea, se va, o sea, se vuelve otra vez al, al cero por ciento. O sea, del cer-- va de cero a cien cada cinco horas y de cero a cien el, el límite de las, de la semana.
+Speaker 17
+Okey, y no hay forma de destrabar. O sea, mi pregunta es si, vaya, te acabaste los tokens de una semana en un día y al día siguiente, pues tienes que seguir chambeando, quieres más tokens. Este, entonces, e-esa era mi pregunta: ¿los puedes renovar? ¿Pagas por adelantado o cómo puedes hacerle para que se reactive luego?
+Speaker 1
+Claro, lo que te decía ahí ya en, en lo que es la documentación, eh, ahí ya podrías irte por un, un Pro Max, un Max, si no me equivoco. Un plan más alto que te da mucho más. Por eso, por eso te digo, va a depender de tu consumo, porque creo que-
+Speaker 8
+De todas formas, ahí tienes el extra uso, ¿no?
+Speaker 1
+Sí, cuchi, te da mucho más, que inclusive hay para también empresariales. Si tienes un grupo, ahí te hacen convenios. Si no me equivoco, quien está utilizando Claude es el BBVA. Entonces, o sea, ya, ya depende tu consumo. Como dices tú, te amarras y por eso es que, a mi parecer, vuelvo a decir, pero es a mi parecer, consumo mejor API. Primero sí consumía el Pro y vuelvo a decir, estaba en toda la emoción y te sale ese mensajito de: mañana vienes. Y es bravo, ¿no? Porque tú quieres seguir y te limita. Entonces, yo lo que hacía, vuelvo a decir, mi experiencia personal, es-- tenía varias cuentas Google donde, pucha, tenía hasta cinco cuentas y lo que hacía, pues ya acababa, saltaba a la otra, saltaba a la otra, saltaba a la otra.
+Speaker 8
+Ojo, igualito con el plan Pro. Ahorita, si tú te metes en la aplicación de escritorio, o sea, a pesar de que él te-- si tú te llegas a acabar el límite, ahí te deja el extra uso. O sea, puedes seguir usándolo, pero obviamente tienes un-- le puedes colocar un tope o algo así. Pero, o sea, no-- lo que pasa es que en mi caso, porque yo lo uso como Pro, no lo uso por API, a pesar de que yo desarrollo full con, con la Pro. Entonces, no sé. O sea, yo, ha-hay momentos en donde me toca y tengo que colocarle el extra uso y le puedes colocar un límite. Es decir, bueno, puedes usarlo, pero hasta, no sé, veinte dólares más, de ahí no te puedes pasar. Entonces, en cierta manera lo puedes hacer así o lo puedes hacer con tu API también.
+Speaker 1
+Claro.
+Speaker 18
+Profe, yo lo he utilizado de, de dos maneras. Digamos, cuando construyo un agente, digamos para el caso este de la veterinaria que ustedes estaban diciendo, uno normalmente pregunta por un PDF, que un PDF son de cinco páginas y ahí están todas las preguntas y respuestas que uno devolvería a WhatsApp a la persona que está preguntando. Normalmente, esas diez palabras, que son los tokens en teoría, eh, uno haciendo digamos como ese barrido mensual, digamos como por diez clientes o cien clientes, lo que es esto, no arroja más de un dólar. ¿Por qué? Porque digamos que uno le mete un modelo como Haiku, que son respuestas sencillas, ¿sí?
+Speaker 1
+Más simples. Sí.
+Speaker 18
+Exac-- entonces, para, digamos, uno se gasta tokens así fuertemente es con los modelos así para programar y todo eso. Pero incluso uno le puede preguntar a la, a la, a la IA qué tan eficientes son los prompts que uno está metiendo, ¿sí? Porque uno también digamos que a veces-
+Speaker 1
+Claro, mira-
+Speaker 18
+Uno a veces es-- no va bien.
+Speaker 1
+Claro, vamos a ir más adelante ya cuando vayamos a los prompt, porque a veces no sé si les ha pasado o han visto o ustedes mismos en el apuro ponen un prompt muy sencillo. Y aunque no crean esos prompt muy sencillos hace que, que, que el modelo recorra todo lo que has hecho, mientras cuando-- por eso vuelvo a decir, ese pequeño expertise que nosotros tenemos de identificar un log, de ver, nos hace a nosotros mucho más fáciles hacer un buen prompt, decirle: "Mira, verifica esto, puntual" y ya lo guías. Por eso es que el prompt, vuelvo a decir, ya hay una carrera en engineer prompt, porque los prompt son fundamentales. Ahorita sí es fundamental. Entonces, lo que decía ahí el compañero, eh, su compañero decía, eh, el prompt muchas veces es muy bueno escribir tu, tu, tu prompt y pasarlo a otra IA free o tipo ChatGPT en su, en su modo free y que te mejore el, el prompt. O en el mismo Claude en su modo free y te mejore el prompt, porque el prompt es fundamental. Si tú lo haces muy leve, no es culpa de, del, del, de, de la IA muchas veces. A veces dicen: "No, programa feo", pero es porque tu prompt no es específico, no está siendo muy, muy atento en lo que escribes. Inclusive yo he visto a veces hasta con errores ortográficos, dicen: "No, pero sí me entiende". Pero ese, ese error ortográfico hace que tenga que interpretar y consuma más. No sé si me dejo entender hasta ahí.
+Speaker 18
+Profe, y otra cosita que yo, yo normalmente utilizo es que, digamos, antes de codificar, yo normalmente le paso como todo el contexto de negocio y le digo que no me genere una sola línea de código, que primero entienda todo el contexto. Y antes de que-- ya después de que entiende todo el contexto, ahí sí lo dejo programar, pero lo dejo programar por pasos. Porque, ¿qué pasa? Digamos, por ejemplo, yo a veces comparto la cuenta con mi hija y mi hija le mete: "Necesito desarrollar una aplicación para tal, tal, tal cosa". Y digamos, se le queda colgado en alguna cosita y le dice: "No, necesito que modifiques esto y renderízalo". Pues claro, él consume una mano de tokens gigantes por una bobada. Entonces yo le digo más bien: "Pídale el pedazo de código que necesita cambiar y usted cámbielo usted misma". Pero no.
+Speaker 1
+Sí.
+Speaker 18
+Entonces ahí es cuando se comen los tokens en forma.
+Speaker 1
+Exacto. Sí, e-eso sí es verdad. Bueno, los que-- bueno, he escuchado que lo utilizan [carraspeo] en escritorio también bastante. Eh, eso es fundamental a veces por, por querer, ay, yo he visto que Claude te pasa la línea de cambiar. Mira, cámbiale esta línea. Y le escriben: "Pero dame completo el código". O sea, ese de dame completo el código es que tenga que retroceder, ver todo lo que le has puestoPara poder darte una respuesta. Entonces, todos esos detalles que parecen, eh, porque cuando no lo pagamos te di-decimos: "No, pero sí te devuelve". Pero ya como ahorita estamos en modo pago, hay que cuidarlos. Sí o sí hay que cuidarlos. ¿Por qué? Porque va a afectar directamente a, a nuestro gasto. Vamos a seguir-
+Speaker 9
+Profesor, una, una pregunta, una duda. Yo lo que he hecho y que me corrijan ustedes, mis compañeros, y cómo lo ven. Yo he hecho con ejemplo, he sido-- yo voy por, por tablas, por decirlo así, por tablas maestras y detalles. Y le digo: "Yo quie-quiero este, esta, esta tabla con estos campos, ponla obligatorio, este va a tener un combobox, debe ir un grid así, un grid allá, esta va relacionado con esta otra", etcétera. Y le voy dando todos los pormenores poco a poco. No, no se lo doy de un solo. Entonces, así he logrado hacer yo algunos prototipos, pero se lo voy diciendo poco a poco. "Mira, esta tiene que tener relación de esto. Tengo este inconveniente, no sé cómo hacerlo. Por ejemplo, necesito que esto sea recursivo por esto, por otra razón". Y comienzo y voy a ir desaar-- desarrollando por tablas. Y es lo que voy, y lo que voy, lo que voy indicándole. Si es un campo obligatorio, si es un combobox, si lleva alguna regla de negocio, que esa debe llenarse de la tabla maestra, una, una anterior, qué sé yo, ¿verdad? Así lo voy haciendo.
+Speaker 1
+Es que esas son buenas prácticas, son fundamentales. Personalmente yo hasta a cada cosa le pongo nombre y le, y le pongo: "Recuerda, esto se llama tal, este PDF es tal, esta tabla se llama tal". Ya no le digo, sino que ya le pongo un nombre y cuando le digo: "Mira, consulta sobre esta tabla", ya sabe cómo se llama la tabla. Entonces es fundamental lo que tú haces, son buenas prácticas. Es, una, no, no ir, pues como ahora dijo también su compañero: "Desarróllame todo esto". Que lo va a hacer, lo va a hacer. Es sí o sí lo va a hacer. Pero cuando algo sale mal-
+Speaker 9
+Yo lo que hago es tratar de entender el negocio o la necesidad del usuario.
+Speaker 1
+Exacto.
+Speaker 9
+Y ya entendiéndolo, yo sé que le voy a pedir. Hace poco había un... que lo llevaba un Excel. Bueno, llevaban dos programas, dos, dos sistemas de Excel. Uno era toda la parte de logística de, de traer productos, de traer productos, ya sea marítimo, aéreo, etcétera, ¿verdad? Pero todo era un, todo era un Excel grande. Al final me entrevisté con lo, con el usuario, entendí bien el, la-
+Speaker 1
+La lógica.
+Speaker 9
+Lo que hacía, lo que quería y fui armando: ah, esta es una tabla, esta es una maestra, esta es una de detalle, este es un encabezado y esta es la regla de negocio y, y, y por qué debe ir, si es obligatorio y todos esos detallitos. Y eso lo fui dando poco a poco a él. Si era el dato entero, si era un string, qué sé yo. Y así lo fui sacando.
+Speaker 1
+Exacto. Es como ahora, [carraspea] ahora como digamos el Opus Plan. Eso es lo que hace el Opus Plan. Es por eso es fundamental conocer el tipo de modelo, porque te va a dar tu Gantt. Ya tú tienes tu Gantt, cómo vas a desarrollarlo y hasta la misma IA te recomienda. No sé si a veces ustedes le dicen: "Mira, hazme esto" y te responde y te, y te, y te responde con preguntas hacia ti. No sé si les ha pasado. Creo que la mayoría, porque es una de las funciones que hace Cloud. Te, te dice: "¿Pero cómo lo quieres? ¿Qué, qué primero hago? ¿Lo quieres todo?" Entonces, aunque no crean la misma IA, o sea, te recomienda esas cosas, sino que algunas personas, eh, lo quieren hacer todo de un solo y es donde pues hacen mal uso de su, de su, de sus tokens, ¿no? Pero sí es fundamental ir por bloques, ¿no? Ya tú conoces, como dijiste, lo que quiere el negocio y lo pongo en bloques. Primero esta parte, esta parte, esta parte. ¿Por qué? Porque ¿qué pasa si tú no lo haces por bloques? Ponte el bloque uno esté bien, el bloque dos esté bien y tienes dificultad en el bloque tres, pero tu avance de acá ya no lo pierdes. Pero cuando tú lo haces todo un solo, cuando cae, cae todo. No sé si les ha pasado, si alguna vez alguien ha hecho y a veces cae todo. Entonces, por eso es fundamental ir haciéndolo por bloques. ¿Sí?
+Speaker 18
+Y muchas veces el chat ya le dice a uno que ya no, no permite más, que tiene uno que abrir un nuevo chat. Yo normalmente lo que hago es que voy trabajando y ya, digamos, cuando lo veo como ya muy copado, le digo que me haga un prompt y me resuma todo lo que, lo que he hecho. Y ya con ese prompt me voy a un nuevo chat y ahí ya arranco nuevamente normalito y me ha funcionado mucho mejor.
+Speaker 1
+Mhm. Sí.
+Speaker 18
+Sí.
+Speaker 1
+Sí, sí, sí, sí. Yo también hago eso, lo compacto el último y con esos vuelvo a ir a otro chat, porque sí, pues ya cuando, eh, a veces uno, uno-
+Speaker 9
+Ese es, ese es, ese es un buen tip. Muchas gracias.
+Speaker 1
+Sí, y uno no se da cuenta, y uno no se da cuenta que a veces está tan... Mira, y eso que Cloud te avisa, te dice: "Estoy al 90 %". Para los que les ha pasado. Eh, a veces te dice: "Estoy al 90 %". Entonces, cuando yo utili-- lo utilizaba en escritorio, hacía eso, eh, lo que tú dices. Ya lo resumía y ya lo mandaba a otro chat o a otra cuenta que yo tenía. [carraspea] Yo llegué a tener hasta seis cuentas para poder utilizar, porque como te digo, sí ayuda bastante, bastante, bastante.
+Speaker 19
+Permiso, profesor.
+Speaker 1
+Vamos, ya van a ser las... ya, igual como empezamos tarde.
+Speaker 19
+Sí, eh, verás que es lo que era comentarle. En el plan de estudios más o menos sale que íbamos a hacer una prueba de tres modelos y hasta cierto punto
+Speaker 6
+Mmm hasta usar un, un, un cronómetro. No sé si eso se podrá hacer hoy o, o no está dentro de la práctica de hoy
+Speaker 1
+No, sí, sí, sí, el laboratorio está. Espera, sino que ya por el tiempo, que si ya lo vimos. [tararea] Pero bu-- por eso vamos a terminar al toque la, la, las láminas. Ahí a pasar. Si quieren unos cinco minutos, porque también lo-- se los voy a enviar el tema del código de hoy. Simplemente es ver el tema del, del, del, del, de los costos, porque ahí pueden, pueden ver lo que van consumiendo. Bueno, reducción de costos, el, el, la limpieza es fundamental. El tema de compactar, como dijo su compañero, pido un resumen, es tipo así, ¿no? Lo compacto. Los prompt precisos, fundamental. El tema de, de cómo se llama su, su stack, su plan [carraspeo], mode primero y el modelo correcto, ¿no? Bueno, aquí un ejemplo de best token. Arregla los errores del proyecto. ¿Qué le dice ahí? No le dice nada. [carraspeo] Va a buscar. Que lo va a hacer, vuelvo a decir, lo va a hacer, pero va a buscar, va a comenzar a buscar errores. Pero otra, otra cosa es que tú seas más específico, ¿sí? Van para avanzar. Y aquí viene la parte práctica. No sé si está en su... Todos pueden abrir su visual o en la terminal como para poder ver. ¿Eh? ¿Sí ven mi máquina? Disculpen.
+Speaker 4
+Vemos la lámina.
+Speaker 1
+¿En la lámina estoy?
+Speaker 4
+Sí.
+Speaker 6
+Sí.
+Speaker 1
+¿Ahí se ve?
+Speaker 4
+Ahí sí.
+Speaker 1
+Ya. Bueno, aquí vamos a ver el tema de, de, como decía su compañero, hoy día era de ver el tema de, de los modelos. Vamos a poner un, un prompt primero, un prompt sencillo . ¿Todos tienen abierto o...? Para que me puedan seguir. ¿Sí?
+Speaker 6
+Sí.
+Speaker 1
+Voy a pasarles al chat este para que lo puedan copiar. [tararea] Su chat, su chat, su chat, su chat, su chat. No se pueden ver el chat si están desactivados. Eh. Jan, [carraspeo] ¿podrías activar el chat, porfa? Hola. Hola.
+Speaker 6
+Pero porque el chat no si-- no funciona.
+Speaker 1
+Mmm, creo que como... [carraspeo]
+Speaker 6
+Sí, aquí acabo de poner saludos, debería salir.
+Speaker 1
+Mmm sí, a mí me sale que no está disponible.
+Speaker 6
+Pero estás en la interfaz web y tal vez pues eso sería el canal de Teams. Sí, qué raro.
+Speaker 1
+Si no está en el canal no, no sale-
+Speaker 6
+Bueno, a, a, al rato, al rato le puedo tomar yo un pantallazo y lo comparto yo el chat y le digo a la IA que me lo pase a texto.
+Speaker 1
+A ver, porfa.
+Speaker 6
+Sí, eh voy con, con un pantallazo . Ah, bueno, ya, ya están en todas. Gracias.
+Speaker 1
+Ya. Ajá. Bueno, vamos.
+Speaker 6
+[suspiro]
+Speaker 1
+Vamos a darle init para iniciar.
+Speaker 6
+Mhm.
+Speaker 1
+Aquí no hemos creado la, aún la carpeta en cloud.md, ya en la otra clase lo vamos a hacer. Ahorita solo vamos a hacer el tema para que vean el tema de, de los costos del, del, del-
+Speaker 6
+Modelos.
+Speaker 1
+De los modelos, sí.
+Speaker 6
+Pide muchos permisos hasta cierto punto. ¿Cuán-cuándo es bueno decirle todos para la sesión o ir uno por uno?
+Speaker 1
+Hay para que ya no te pida, pero, eh, siempre es bueno que tú tienes el control, ¿no? Pero si tú ya más o menos quieres darle sí hay, eso también lo vamos a ir viendo para que ya no, no esté mandándote esos, esos detalles.
+Speaker 6
+Okey, eh, ¿puedes volver a la presentación si es tan amable, profesor? O tal vez, eh, mitad, mitad screen
+Speaker 1
+¿Acá?
+Speaker 6
+Mhm, por favor, porque primero decía, eh, init, el segundo ya es este que pasaron. Model.
+Speaker 1
+Okey.
+Speaker 6
+Okey, model Sonnet crea... Creo que no responde.
+Speaker 1
+Ya. Sí, están ahí [carraspeo] para verlo.
+Speaker 6
+Sí, ahorita le doy aquí y, y los dos copy paste que puse no, no, no responden con nada.
+Speaker 1
+Igual yo, yo se los voy a, a enviar.
+Speaker 6
+Hasta cierto punto, mientras podamos ver métricas, estará excelente hoy, pura vida.
+Speaker 20
+[sonidos de la televisión de fondo]
+Speaker 6
+¿A usted le creó un source tasks, profe?
+Speaker 1
+Sí.
+Speaker 6
+¿Qué es un-- qué es ese archivo? Task punto model TypeScript. ¿Qué es eso? No, no, es-es-ese no es, sino uno que es, por ejemplo, exportar prioridad, exportar estatus, exportar interfaz, algo así.
+Speaker 1
+¿Cómo? ¿Cómo? ¿Cómo? No te entendí.
+Speaker 6
+No se me creó eso.
+Speaker 1
+¿Sí?
+Speaker 20
+[sonidos de la televisión de fondo]
+Speaker 6
+O sea, eh, podemos, podemos irnos al Visual Studio y ver la estructura que, que he ido creando, porque de momento tengo en total dos archivos.
+Speaker 1
+Claro, ori-- sí, ahorita, pero, pero, eh, ahorita esta función más que todo es para, para que vean el costo. Ya en la siguiente clase vamos a crear la carpeta, vamos a ir viendo que es-- más que todo esto es un prompt genérico, porque lo vamos a correr con los, con los, con todos los modelos para ver el tema de costo, mira. Por decir, ya te corrió. Listo, creó, como dices tú, el, el, el task, la tarea y vemos el costo. Ahí podemos ver el costo. ¿Sí? Ya. Mira mi-- porque como ya, ya he estado trabajando temprano. Mira mi caché. Aquí es lo que les decía ahora. Tiene doscientos cincuenta y ci-- doscientos cincuenta y cinco punto dos K de caché. Entonces, esto te ayuda bastante a reducir el costo. Y ya viene, ya viene, eh, disponible aquí en Cloud Code. Esto nos, nos, nos ayuda bastante a bajar el tema del costo.
+Speaker 6
+Profe, eh, no, no, no comprendo ese tema de caché. Digamos, estamos viendo Hai-- eh, Haiku, que es el co-- el, el, el más básico, ¿verdad? El, el ver-- el nivel uno. Sonnet, nivel dos.
+Speaker 1
+Mira, por decir, aquí el, el-- pueden ver con Sonnet.
+Speaker 6
+Plata, sí. Dinero, dinero ahí con eso.
+Speaker 1
+¿Cuá-cuánto es? Cero punto cero cero cuatro. ¿Cuánto vendría a ser? No sé, pues en dólares-
+Speaker 6
+Peseta, una peseta.
+Speaker 1
+Al sol de los peruanos.
+Speaker 6
+Una peseta de...
+Speaker 1
+Será pues ni, ni un céntimo. Poquísimo. Pero mira con Sonnet cuánto salió.
+Speaker 6
+Okey.
+Speaker 1
+Es, eso es lo que quiero que-- es el mismo prompt. Ahorita vamos a hacerlo, pero...
+Speaker 6
+¿Qué quiere decir el caché? Es lo que no comprendo.
+Speaker 1
+Ah, ya. Ya ahorita te explico. Vamos a verlo. El mismo prompt. Ya. El caché, vuelvo a repetir, eh, el caché es la historia de, de tu conversación, ¿sí? Como no le hice un, un clear, una limpieza, lo inicié y como yo ya había estado hablando, eh, eh, temprano y he estado haciendo unas interacciones, lo guarda en la memoria, ¿sí? Es una memoria, como para que no inicies desde cero.
+Speaker 6
+Cierto.
+Speaker 1
+Tú le pones: me llamo Gabriel, trabajo en X, Y, Z. Tú eres, tú también le dices: tú eres un agente para costos, tú eres un creador de páginas web, tú eres X, Y, Z. A mí me gustan los colores rojo para mi front end, qué sé yo. Todos esos detalles que parecen insignificantes, los pones, lo va, lo, tú lo vas a ir construyendo. Entonces, cuando tú le pidas algo para que no agarre y recorra todo eso, ya lo tiene en memoria, ¿sí? Ya lo tiene reco-- ya lo recuerda y ya no lo vuelve a recorrer. Ya no anda recorriendo todo buscando: ah, ¿qué hago yo?
+Speaker 6
+Ajá.
+Speaker 1
+¿Qué hago por acá? No, sino que ya lo recuerda y te ahorra esa usabilidad que lo tendrías que hacer con tokens, porque ya lo tiene [carraspeo] ya lo tiene en memoria.
+Speaker 6
+Okey, perdón. Que es el cache read, eso es lo que es. Quiere decir que él entendió eso.
+Speaker 1
+Sí, claro, exacto. Mira, aquí tiene los tres modelos, ¿sí?
+Speaker 6
+Qué caro, eh. Bueno, hasta cierto punto sal-salió más barato Sonnet, ¿verdad? Perdón, salió más caro Sonnet.
+Speaker 1
+No, aunque no creas, depende del caché. Mira cuánto recorrido de caché. Son treinta y cuatro mil nada más y mira cuánto token me cobra. Es que casi yo no lo utilizo. Yo lo utilizo muy poco, muy poco, muy poco. Pero mira cuánto recorre acá y cuánto cobra. ¿Sí?
+Speaker 6
+Perfecto.
+Speaker 1
+Vean, va a depender mucho de esto. Aquí, mira, es poco recorridoEl tiempo. Tienen que ver el tiempo. El tiempo casi son lo mismo, ¿ah? Va a depender las respuestas. Aquí les voy a dejar, que ya les pensaba-- les voy a dejar aquí en, en, eh, les voy a subir para que puedan descargarlo y puedan correr este. Este van a comparar los tres. Esta es su actividad que, que tenían ahí, que es el test donde tienen que darle estas respuestas. Aquí ya está el código que yo lo he corrido, tiene que darle lo mismo. Por decir, aquí es, es un prompt para poder, cómo se llama, igual crear, crear el tema de, de unas actividades y ustedes van a comparar el haiku, el sonnet con este prompt. Este es el prompt. ¿Sí? Eres un desarrollador de TypeScript experto. Crea una función llamada filterTags que recibe un array, bla, bla, bla. Entonces, este prompt, que es un poquito más complejo, se lo vamos a pasar a los tres. Eso es lo que tienen que hacer. Yo ya les estoy dejando. Corre muy bien para que ustedes también corran. Y las respuestas que debe darle también las estoy poniendo acá para que ustedes puedan validar, ¿sí? Y vean el tema también de los costos frente, frente a, a-al, al-- a cada modelo. Este es, este es un, un tema de, de inclusive las respuestas. Van a ver qué respuestas es mejor para cada uno de ustedes dependiendo su necesidad y el tema de sus costos. Esta es la tarea que el desarrollo que íbamos a hacer, pero ya por un poco de tiempo. Igual se los voy a dejar para que ustedes puedan as-- correrlo, nada más. Y lo que les decía sí o sí para la otra clase, que ya, ahorita, ya esto ya prácticamente teoría ya va a ser muy poco. Desde la otra clase ya vamos a arrancar mucho más ya a meternos, porque creo que es lo, lo principal de este curso. Mucha teoría no, no, no es muy dable para poder ver. Pero [carraspeo] lo que sí voy a hacer en la otra clase, unos diez minutos al toque no más para que me indiquen sus, sus tema de sus proyectos. Igual, si pueden dejarlo, voy a li-- hablar ahí con el coordinador para que lo puedan dejar, eh, para el martes. Si lo pueden tener para mañana, para yo más o menos verlo, ir con unas ideas el, el día miércoles que nos toca nuevamente para poder ya entrar, cómo se llama, ya a codificar, que creo que es lo que nos interesa a todos. Ya meternos a código. Pero quiero ver, eh, más que todo qué proyecto guía podemos hacer para irlo haciendo entre todos, ¿no? Por eso es muy importante. Les voy a dejar esto para que lo corran. El tema del prompt, correr estas líneas, vean los costos y esto tendría que salirles, ¿no? El tiempo, cuánto genera en tiempo, qué es más puntual, el tema de los tokens de entrada, que tiene que ser lo mismo con todo, salida. Ven como O-opus sí o sí te da más contexto, más cosas, el sonnet menos y el, el haiku menos, ¿no? La compilación y el tema de los costos. Este cuadrito tendrían que sacarlo [carraspeo] del código que les voy a dar, ¿sí?
+Speaker 21
+Sí.
+Speaker 1
+¿Hay alguna consulta?
+Speaker 21
+Eh, bueno, ahorita con respecto a lo que es el material, ¿dónde se va a ver este prompt? Tengo entendido que hay un canal en, en Teams y toda la cosa. ¿Cuándo está eso ahí?
+Speaker 1
+No, yo hoy día lo cargo a más tardar mañana en la mañana, porque ya lo tengo, solo es de cargarlo, sino que todavía no tengo acceso. Lo que pasa es que como esta máquina es de mi trabajo, mi máquina personal, eh, cómo se llama, también quise entrar, pero como seguro primera vez que yo me logué con el, con el correo que me han dado de, de, de la empresa, de aquí de DataPath, no me ha dejado. Entonces, yo quiero de aquí solucionarlo porque tengo que descargar el autentificador para poder ya yo subir y también las otras clases entrar con el correo de, de DataPath, ¿no? Y cargarles ahí, porque les tengo que cargar las diapo. El tema del, el tema del, del test, que es el laboratorio de hoy día. Y ahí mismo voy a dejarles, voy a hablar para que ahí mismo me hagan alcanzar o creo un Drive por ahí para que me hagan alcanzar el tema de, de su proyecto, ¿no? Más o menos en qué lo quieren enfocar, ¿sí? A más tardar, mi compromiso es mañana antes de las diez de la mañana ya lo tienen esto para que lo puedan [carraspeo] revisar. Es de entender que, eh, de acuerdo al, al, al curso es, es evaluado. Eh, esto es muy básico, creo que la mayoría creo que lo sabe, pero los otros sí vas-- vamos a, a tener ese hinco, ¿no? Por eso es importante que ustedes, eh, dejen a más tardar les pido mañana, así sea en la noche, para yo el miércoles temprano darle una revisada y poder aterrizar un poco mejor la clase del miércoles ya para meternos a, a, a codificar, ¿no?
+Speaker 21
+Sale. Muchísimas gracias, profesor, por la confirmación.
+Speaker 1
+¿Alguna otra consulta? Si no, ya para despedirnos.
+Speaker 9
+Profesor, ¿qué, qué días son las clases? Mier-- el lunes, miércoles...
+Speaker 1
+Mmm, lunes, miércoles, este viernes. Bueno, acá en Perú es Semana Santa. [risas] No, no te dicen. No va a haber. Y nos vamos hasta el otro lunes. Vamos a tener esta semana lunes, miércoles y regresamos el otro lunes, que sería lunes...Lunes seis
+Speaker 9
+Seis
+Speaker 1
+Sí
+Speaker 9
+Bueno, en mi caso, profesor, en mi se-- la Semana Santa aquí en mi país, que soy de Guatemala, comienza desde el miércoles. Entonces ya tengo viaje, [risas] entonces no, no voy a, no voy a poder asistir
+Speaker 1
+O, o no sé, pues igual voy a coordinar con... porque sí, pues he visto que hay bastante interacción de otros países. Eh, sería bueno, voy a coordinar igual si va a haber este miércoles
+Speaker 9
+Sí, sería-
+Speaker 1
+Igual voy a confirmar
+Speaker 9
+Si lo puede pasar para otra semana, sería ideal, porque en nuestros países ya comienza el miércoles, ya es Semana Santa
+Speaker 1
+Ah, bueno, mira, mira, no sabía [risas]. Sería bueno conocer
+Speaker 9
+[risas] Sí, gracias
+Speaker 1
+Voy a coordinar con, con los, con los chicos para mañana tenerles una respuesta. En caso me confirmen que vamos hasta el lunes, igual no se olviden sus proyectos, como que tengo más tiempo. Si es que me dicen no el miércoles, igual les confirmo mañana, porque ya tien-- todo está en el chat, ¿no? Ahí también cualquier cosa, duda, me escriben. A veces, bueno, [carraspeo] como les dije, yo trabajo acá en Perú en una financiera, pero igual ahí atento al chat, cualquier cosa, ahí estamos, ¿no? Para apoyarnos igual
+Speaker 4
+Okey, okey. Gracias, profesor
+Speaker 9
+Muchas gracias, profe
+Speaker 1
+Mañana les confirmaría, ¿sí? Hasta, hasta mañana o hasta el miércoles-
+Speaker 9
+Miércoles, creo
+Speaker 1
+...si no, hasta el lunes. Igual, hasta luego
+Speaker 9
+Gracias, profe. Hasta luego
+Speaker 4
+Chau, profe. Hasta luego. Gracias por todo
+Speaker 9
+Hasta luego. Gracias
+Speaker 4
+Hasta luego
+Speaker 9
+Nos vemos
+Speaker 4
+Saludos

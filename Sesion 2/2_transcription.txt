@@ -1,0 +1,1309 @@
+Sí, para poder avanzar, porque la idea de esta sesión es que logremos hacer el laboratorio juntos. Quiero lograr ya eso con ustedes para poder ir viendo ya el tema no solo teórico, sino práctico. Ahora vamos a ver... ya entrando al tema. Ya. Eh, aquí vamos a hablar de por qué utilizar lo que es, eh, Next.js quince y Supabase, ¿no? Eh, al terminar esta sesión vamos a poder, eh, cargar una base de datos real ayudándonos con Cloud Code, viendo su configuración, viendo todo lo que es su arquitectura. Eh, en Next.js quince es muy... se está utilizando ahorita mucho con Supabase por el tema de que necesitamos entender que nos da el tema de los server components, o sea, ya viene sus componentes por defecto. Esto significa que los componentes, ah, se rendirizan en el servidor y ya va al navegador ya listo. Eh, en el tema de el, los app route son rutas basadas en archivos, eh, de los server components, eh, por defecto. El servidor hace el trabajo pesado. Eh, en el tema de los server action, eh, son mutaciones de datos sin necesidad de, de crear, eh, endpoints manualmente. El stream más suspens-- eh, UI, el UI más rápido, eh, mientras carga la data. Y en el tema de el Supabase es que es un Postgres, o sea, eh, va la autentificación integrada, tiene lo que es el RC, el RLS, el Row-Level Security, que sirve-- es muy importante, ¿para qué? Para que tú solo puedas ver, eh, como usuario tus datos. ¿Sí? Esto es muy importante. Eh, el, lo que es el API Rest también, el real time. Esto es muy importante cuando nosotros borramos un usuario y se borra toda su información en Supabase. Bueno, nos dan quinientos megas de base de datos en lo que es free, porque hay una también para lo que es, eh, comprar un tema de licencia y cincuenta mil user gratis. ¿Sí? Ahora, ¿cuál es la diferencia entre lo que es, eh, el server component y el client component? Eh, por decirlo así a, a grandes rasgos, antes de ya entrar a algo más puntual, eh, lo que es el server component corre mayormente, por no decir todo, en el backend, en el servidor. Su nombre mismo lo dice. Es donde el trabajo se hace más pesado, eh, traer datos, calcular, eh, conectar a Supabase. Mientras que el client component, eh, corre en el frontend, eh, en el navegador, en suuu browser. ¿Para qué? Para agregar botones, para si usan hoo-hook, eh, eventos, XYZ. Esa es la principal diferencia. Mejor dicho, eh, ya con el server nosotros pode-podemos tener algo en crudo y ya con el client component podemos ya agregar botones, eh, hooks, XYZ. Y la regla de oro es que el server component, ya que es por de, es por defecto, solo hay que agregar en lo que es el use client cuando necesitamos interactuar formularios, clic, botones, estados, XYZ. Ahora, la estructura del proyecto del test flow lo estamos poniendo así. Ya vamos a ver [carraspea] ahorita, eh, en el laboratorio cómo vamos a crear esto en, con Cloud Code. Esto, si es que no tuviéramos Cloud Code, nosotros lo, lo hiciéramos manual, pero con Cloud Code nos va a hacer esto en segundos, ¿no? Bueno, el route para el tema de las rutas, como es el page, eh, la definición de rutas, el app route, eh, los, el-- los dos clientes Supabase. Como les dije, cliente en navegador y cliente en servidor. Vamos a tener dos, dos clientes. El server action, que son las funciones async del servidor, eh, llamadas desde los componentes y las migraciones. Bueno, los dos clientes y por qué. Alguien no sé si, si, si ha visto el tema de, de usar estos, estos dos, eh, eh, clientes, ¿no? En alguno de sus, de sus trabajos, mayormente en sus proyectos XYZ. No sé si alguien aquí quiere intervenir, quiere darnos una idea puntual para hacerlo aquí ya un punto interactivo.
+Speaker 2
+Buenas, yo no soy experto, pero quiero simplemente ver si puedo agregar algo. Cuando entendemos que es un client component, es esto que va a correr en el frontend, no, no va a tener hasta cierto punto nada que se le corresponda al backend. Y cuando hablamos de server component, eh, bueno, action, todo lo que se va a encargar del backend. Ahora, lo que tengo entendido es ya en
+Speaker 3
+En un poco más producción. Ambos archivos están en un mismo servidor, pero son diferentes, eh, funciones. Lo que tal vez ahí se me va un poco corto es qué más se puede hacer con ellos, eh, del lado de cliente. De server sí me manejo más.
+Speaker 1
+Ya, muy bien. Claro, como dices tú, eh, por decir, el client se usa, eh, con las cookies del navegador para-- por decir, ¿no? Para, para loguearse. Mientras que el server component ya viene con los requests HTTP, eh, que llegan al servidor. Entonces, eso, eh, es muy importante diferenciarlos. No son lo mismo. Uno va, como tú mismo dices, en el frontend y, eh, también va a lo que es el servidor, pero, eh, descansa en el frontend, en lo que es formularios, botones, XYZ. Mientras que el server component viene más en crudo desde el servidor. Ya lo vamos a ver con, con el laboratorio que vamos a hacer. Por eso es que quiero pasar las láminas un poco más rápido para poder hacer el laboratorio juntos. Bueno, el diseño de base de datos. Bueno, aquí tenemos dos tablas, ¿sí? Eh, que vamos a crear con, con... ¿cómo se llama?, con CloudCode. Es muy importante, eh, tener estos puntos. El UID en vez de serial. Muchas veces ponemos una serial uno, dos, tres, cuatro, cinco. Con esto no-- es indescifrable. Pas-- es muy importante. Es no predecible. Es un-- como un primary key, pero muy, muy, muy, muy fuerte en lo que es Supabase, ¿sí? Bueno, el on delete, esto es cuando nosotros, eh, borramos un usuario, también se borran sus tareas. Un check constraints es la validación en base de datos y, bueno, el índice, que es en los queries más comunes, ¿no? Esto también lo vamos a ver, que vamos a crear las dos tablas y vamos a ver lo que es, eh, generar las migraciones con CloudCode. Aquí, por decir, tienen un ejemplo de un prompt para crear esas dos tablas. Y el flujo es que CloudCode revisa lo que es el editor, verifica la tabla, pide cambios. Corrige también, porque vamos a ver que vamos a corregir. Genera tipo de TypeScript. Esto es muy importante. ¿Por qué? Porque muchas veces creamos el tema de los-- de, de las variables, de los fixtures y ponte-- le ponemos, eh, integer cuando es boolean. Entonces, lo que hace aquí es validar los tipos de datos. Imaginemos que tenemos una, una gran base. Esto nos va a ayudar a poder validar los tipos de datos . Ya aquí vemos, bueno, los, los tipos de TypeScript autogenerados. Como les digo, aquí lo, lo vamos a ver igual cuando, eh, ya corramos el tema del código. Podemos-- vamos a validar esto. Que autocompleta en el ID los errores de tipo de compliant, cambia los schemas y ve lo que es los raw insert y update separados. Todo esto en una sola línea. Lo que nos tardaría unos treinta minutos lo vamos a hacer en una sola línea . Aquí antes de pasar, quiero que is-- no sé si todos tienen Supabase, si no para poder crear las cuentas de una vez para poder ver. No sé si alguien ya lo tiene, alguien lo tiene, si no para hacerlo todos juntos, ¿sí? Vamos a-- ahorita en el chat les voy a poner.
+Speaker 3
+Profe.
+Speaker 1
+Sí.
+Speaker 3
+Mire, yo sí, eh, tengo la cuenta creada. Lo-- el comentario que quiero hacer es que Supabase, cuando trabajas con cuentas gratuitas, ellos te dan, cuando abres un nuevo proyecto, te dan un tiempo de uso, de uso gratuito del, de la cuenta, digamos. No me acuerdo-
+Speaker 1
+Sí.
+Speaker 3
+que si son treinta días o noventa días. Entonces, cuando uno está desarrollando un proyecto, es, es-- hay que tener precaución porque pasa el tiempo y después vas a tener que comenzar a pagar ya la... digamos, el usuario premium de Supabase, que creo que son como veinte o treinta dólares mensuales, ¿sí? Y cuando uno desarrolla un proyecto y ya tiene todo creado la base de datos, luego cambiarse a otra opción es un poco difícil. Yo, por ejemplo, he usado Railway y ahí con una cuenta de cinco dólares igual se pueden crear bases de datos y, y se paga siempre cinco dólares y, y no es, no es tan fuerte el cambio de no pagar nada a comenzar a pagar veinte o treinta dólares mensuales de Supabase.
+Speaker 1
+Ya. A ver. Eh, Fire, Firestore sí tiene lo que tú dices. Inclusive [risas] hoy día me llegó un correo que ya se había acabado, pero Supabase noSiempre y cuando lo uses y no te expandas del límite, no tiene esa restricción.
+Speaker 4
+Eh, equipo, a mí lo que me sucedió fue lo que dijo el profe. Eh, yo lo, lo dejé de usar quince días-
+Speaker 1
+Exacto.
+Speaker 4
+Y me la pausó. Me la pausó. Pero, pero entré y la restauré. O sea, obviamente le quité la pausa. Te deja quitar la pausa siempre y cuando no te, no, no te supere. Y, y listo, le quité la pausa y dice mmm. Pero sí la pausa, o sea, si no, no se usa la pausa.
+Speaker 1
+Sí, sí, justamente es eso. O sea, eh, lo bueno de Supabase es que no, no, no te pone ese límite, por decir, eh, como te digo, el de Google. Eh, ellos sí te ponen [carraspeo]. Pero, eh, Supabase, si tú lo usas y tampoco te extiendes, claro, pues de los quinientos megas que nos dan, eh, para proyectos pequeños lo pueden usar, pero si ya su proyecto es más grande, pueden ver otras alternativas como tú, como tú indicas. Pero es la usabilidad, ¿sí? Podemos crear todas las cuentas, por fa. Les voy a pasar en el chat el link para poder ir todos para poder desarrollar el taller, por favor.
+Speaker 5
+¿Y podemos usar Postgres local o en un servidor que ya tengamos?
+Speaker 1
+Mmm. También, pero para fines de laboratorio tendríamos que todos poder probar con Supabase y poder ver el, el potencial que tiene. Que sí lo pueden hacer, por decir, ya para su proyecto [carraspeo] final. Mira, lo integré con esto, pero para fines didácticos, eh, quiero para que puedan ver el tema de, del RSL que viene implementado ya acá, ¿sí? Para, para que puedan ver también esta herramienta. Pero si ustedes ya al final de, del, del proyecto que van a presentar, del laboratorio final, de su TiceFlow final, eh, utilizan, también es válido, siempre y cuando cumplan las políticas, pues, de, de RSL, de RLS también. Ahí les pasé al chat . Ya hay varios que sí tienen, tienen cuenta. Para los que no, vamos a hacerlo al toque, no es muy complejo. Ahí les pasé el link, ese es el link oficial . Podemos entrar todos. Todos los que no tengan.
+Speaker 2
+Profesor, unas consultas aquí en Supabase, que es la, la última presentación que, que mostraba es que hay beneficios. Por lo que voy entendiendo, digamos, este archivo auto generado trae, eh, un modelo con todo lo que va a tener. No me-- no comprendo la parte de el punto dos y el punto tres que dice "errores de tipo en compile time y cambias el esquema, regenera y TypeScript lo mar-marca lo que falta". Un poquito ahí de eso. Mientras van terminando de crear la cuenta o si ya están, no importa, seguimos.
+Speaker 1
+Espérame. O, o, o no te, no te escuché muy bien la pregunta, disculpa.
+Speaker 2
+Sí. Mmm. Si ya estamos listos, continuamos. Si hay aún unos que faltan ahí para aprovechar un poquito el tiempo es: eso que marca la diapositiva diecisiete. Salen beneficios y salen punto uno, punto dos, punto tres y punto cuatro. El uno, perfecto, porque es Visual Studio y autocompleta. Dice: "errores de tipo en compile time". Le pregunto a Cloud Code y lo que Cloud Code me dice es que él muestra los errores antes de que se le lleguen al usuario. Ok, perfecto. Eh, no hay, no-- sí le entiendo, pero hasta cierto punto nnno. Y la parte del esquema. Entonces, la pregunta como tal es: lo que nos está diciendo esta diapositiva es un comando que trae todo eso.
+Speaker 1
+Sí. O sea, el, el prompt nosotros, eh, vamos a tener también, eh, para ver los errores. No es que te lo traiga, eh, al momento de correr, sino que tú vas a, tú vas a correr este prompt. Va a crear, eh... Mira, me voy a adelantar para mostrarte, para-- podemos entender. Eh, ¿si ven mi pantalla de Visco? ¿No? ¿Se ve?
+Speaker 2
+No, profe, estamos viendo la de Supabase.
+Speaker 1
+Supabase . Ya.
+Speaker 2
+En vivo, sí.
+Speaker 1
+Se crea todo. Ya. Crea, va. Y nosotros ya con un comando acá vamos a poder ver aquí. Con este vamos a poder ver si te-- si tiene errores y e-- si la compilación fue limpia, cero errores. Todo eso te lo va a hacer con este en Cloud Code, ¿sí? En, eh, en el, en el base, para poder validar todo lo que has hecho. Por eso es que, como les decía, quiero pasar un poco más rápido las diapo para poder hacer el laboratorio juntos, lo que no se pudo en el-- la primera sesión porque fue un poco más por el tema del tiempo, las cuentas, todo eso.Para poder entender el, el tema del-
+Speaker 2
+Okey. Eh, ahí, ahí lo que muestras es un comando de TypeScript y no emit que se va a establecer errores del proyecto, de compilación del proyecto. Capiche. Muchísimas gracias, pura vida. Y solo un poquito más, yo sé que ya vamos a saltar al laboratorio. Cuando dice esto: agregas una columna en Supabase, corres el comando, TypeScript ya sabe que existe. O sea, hasta cierto punto, ese esquema, si se actualiza en es, en Supabase, inmediatamente la respuesta Ty-- eh, el TypeScript la entiende, entonces.
+Speaker 1
+Claro.
+Speaker 2
+Súper, súper. Gracias. Muy amable. Gracias.
+Speaker 1
+Ya. ¿Sí pudieron ingresar? Eh...
+Speaker 6
+Sí. ¿Te comparto pantalla, profe, para que lo vayamos haciendo o, o...?
+Speaker 1
+Sí, haga, hagan. Yo ya tengo mi, mi cuenta. Por eso es que quería que les di el link. Y quien nooo, no pueda hacerlo al toque [carraspeo], para poder ayudar lo que nos proyecta al toque, porque es loguearse nada más.
+Speaker 6
+Listo. Yo simplemente lo que hice fue loguearme aquí en Supabase con un proyecto nuevo. Lo configuré en Aty-- aquí en Américas y hasta aquí vamos. O sea, solo que me pidió fue que le diera nombre al proyecto, me generara un password, la región Américas, que habilitara la API y-
+Speaker 1
+No, no, ponlo en Virginia. Virginia, Virginia, ponlo.
+Speaker 6
+Ah, en Virginia. Mmm, bueno, y aquí cómo hacemos el-
+Speaker 1
+O ya si lo creaste en, en, en América, ya, no importa.
+Speaker 6
+Ah, okey.
+Speaker 1
+Sí, sí, ese proyecto ya lo creaste.
+Speaker 6
+Sí.
+Speaker 7
+Una pregunta, ¿ese link después...?
+Speaker 1
+Sí. No, no, no hay, no hay, no hay problema.
+Speaker 6
+Virginia, ¿es esto?
+Speaker 1
+Sí, abajo, abajo.
+Speaker 6
+Es, es North-- ¿North Virginia? North Virginia.
+Speaker 1
+No. Sí, sí, ahí. Y marquen. Mira, ahí puedes ampliar tu pantalla para verla más. Mira, abajo, abajo, ya. Mira, abajo. Eso es lo que quería llegar. Si marca abajo te dice, eh, el, el-- lo que es el RSL, el Role-Based Access Control. Ahí automáticamente ya nos va a crear eso en automático, valga la redundancia. Por eso era importante que quería que lo vean. Créalo, porfa, créalo.
+Speaker 6
+Listo, ahora sí va. Me guardo esto para caer esto.
+Speaker 1
+Sí, cópialo, cópialo.
+Speaker 6
+Listo. Si me permite. Listo, sí, no hubo problema.
+Speaker 1
+Ya, perfecto. Mírate, ándate a la parte izquierda.
+Speaker 6
+Sí.
+Speaker 1
+Ya. Autentificación, abajo.
+Speaker 6
+No me la habilita. Está como cargando.
+Speaker 1
+Ah, está cargando todavía. Hay que esperar.
+Speaker 2
+¿Verdad que este Supabase todavía no tiene el esquema, el esquema que le vamos a dar del usuario? ¿O Cloudo se lo va a dar? ¿O de dónde aparece?
+Speaker 1
+Cloudcode. Cloudcode, en los prompt.
+Speaker 2
+Copiado.
+Speaker 1
+No lo crea todavía.
+Speaker 6
+No, si quieres que otro comparta, profe, porque el mío está como demorado.
+Speaker 7
+Una consulta, profe. Para este ejercicio, ¿vamos a usar el mo-modelo específico de Cloudcode?
+Speaker 1
+Sí. ¿Cómo? No, no escuché bien, disculpa.
+Speaker 7
+Eh, si vamos a usar un modelo específico de Cloudcode para configurarlo de una.
+Speaker 1
+Sí, sí, sí, sí, sí. Ahorita vamos a entrar a VS Code y... Ya. Eh, ya ahí proyecto yo mientras como a su compañero no le carga para proyectar cómo deben para sacar el tema de sus credenciales, que es lo, lo, lo importante es sacar las credenciales.
+Speaker 2
+¿Verdad que ahora cuando...?
+Speaker 1
+Sí, ve-
+Speaker 2
+Perdón la interrupción.
+Speaker 1
+¿Ve mi pantalla?
+Speaker 2
+Sí, sí se ve.
+Speaker 1
+Ya. Mira, esto es lo que nos va a servir. Cópienlo, pónganle un TXT, los que ya tienen, cópienlo nada más. Un TXT aparte, el, el project y el key. Estos dos nos va a servir para poder conectarnos ahorita, ¿sí? Estos dos cópienlo en un, en un archivo TXT para que lo pueda tener aparte.
+Speaker 6
+¿En qué parte ingresaste, profe, que verá?
+Speaker 1
+Ah, ya. Mira, cuando te cree, porque a ti te está saliendo aquí. Todavía está cargando. Aquí donde dice "Copy", bajas y aquí. Tu proyecto URL y tu key. Estos dos.
+Speaker 6
+Ah, perfecto. Listo. Listo, ya voy ahí.
+Speaker 2
+Listo.
+Speaker 1
+Sí. Ya, perfecto.Mhm, ya. Ahora vamos a ver un poco lo que es el es-- el RSL. Bueno, yo creo que la mayoría ha trabajado con ello, pero por decirlo así, el RSL es el tema de que, eh, el usuarios que tú creas pueden ver solamente sus tareas. El tema es información puntual, ¿no? Eh, no, no es que si tú no le pones esto, eh, es como si entraran a tu casa y todos vieran todo, en vez de que tú tengas cuartos, que cada quien tenga su cuarto y ve lo que hay en su cuarto. En general es eso. Por eso vamos a crear aquí ya con estos prompt también para ver el tema de si está activado, eh, lo que es el RSL en, en sus, en sus proyectos. ¿Ya? Y, y tres reglas importantes. Eh, el RSL, si está in-inhabilitado, tabla pública en su base. Eh, cualquiera puede leer la información. Otra, RC-- RLS, perdón. RLS habilitado sin políticas, nadie excede. ¿Qué quiere decir ahí? Eh, si tú ya está bien, eh, le has dado seguridad, pero, eh, no les has dado los roles. No sé si alguien ha trabajado acá en base de datos, eh, como en gestor de base de datos. Hay que ver los roles, a quién les das les-- quién puede insertar, quién puede seleccionar, quién puede hacer los update. Todo eso tienes-- tenemos que ver también esas políticas. Y, y las políticas definen quién puede hacer qué cosa, quiénes pueden hacer los select, update, insertar, etcétera. Acá también tenemos un, un pequeño prompt que lo vamos a usar también, eh, ahorita, donde ven la anatomía de lo que es el RSL. Eh, aquí yo les doy una política que puede ser seleccionar, insertar, eh, eh, actualizar, borrar. Ya va a depender de us-ustedes qué quieran que haga ese usuario. Ustedes van a ser los propios gestores de su base de datos. Yo quiero que tal usuario solo inserte o solo tenga lectura. Les-- le-- tú le pones su, su política, sus roles. Yo, yo quiero que este usuario también pueda actualizar tanto. Entonces, eso podemos organizarlo también ahorita, ¿sí? Ahora, ¿por qué es importante el, el, el user? ¿Por qué? Porque yo si no le pongo qué, qué tipo el where, es un where, eh, y no le digo: "Mira, eh, X usuario, eh, puede borrar". Si yo no le pongo el, el user, cualquiera lo va a poder hacer. Por eso es también buenas prácticas poner. Y ahora, no sé si se ve, se ve muy chiquito acá. Lo voy a-- voy a intentar agrandar, disculpen . Acá. Cuando ustedes hagan un, un cómo se llama, un, una política a los usuarios, tienen que poner paréntesis select y el out-- y el, y el, y el usuario. El, perdón, el you para el usuario. Si nosotros no pone-- no ponemos el select entre paréntesis y solo ponemos directo este, va a recorrer toda la tabla. Si ustedes tienen diez mil, veinte mil, va a correr y se le va a hacer muy pesado. Por esto, este comando es muy importante que vaya así. Ya igual lo vamos a ver, pero por ahí les dejo más o menos cuál, eh, cuáles son los errores que podríamos cometer. Y podría ser la, la, el tema de, de la carga de esa, de esa tabla muy pesada, esa búsqueda . Ya, bueno. Acá tenemos lo que es las pol-- las políticas, eh, RLS, ¿no? Para las tareas. Son cuatro. Bueno, tenemos, eh, seleccionar, insertar, actualizar y borrar. Ya creo que, por no decir todos, la mayoría acá creo que hemos trabajado con estas políticas. Y como les digo, es muy importante poner el user. ¿Para qué? Para poder saber quién puede hacer qué. Ya también lo vamos a ver creando dos usuarios donde han estado en, en su página, por eso quería que la creen, para poder-- ahí vamos a crear dos usuarios y darle los roles que les di . Mmm, y bueno, los cinco errores que a veces, eh, se comete cuando utilizamos, eh, esta base de datos y otras bases de datos es no habilitar, por decir, el RLS, [carraspeo] ya que la tabla queda cien por ciento pública y es un tema de seguridad importante. Eh, el RLS sin políticas. Sabes qué, yo lo activo, pero todos pueden hacer, todos pueden insertar, todos pueden, cómo se llama, borrar o nadie, no les doy los roles a nadie. Entonces, también vas a generar un poco de lentitud y también inconvenientes en tu proyectoTambién darle, eh, todos a todo. También. ¿Por qué? [carraspeo] Porque pierdes el control granular. Yo ya no sé quién inserta, [carraspeo] quién actualiza, quién borra o, o cualquiera está borrando cosas que, qué sé yo, ¿no? Información importante [carraspeo] o in-insertando información que, que, que no es real XYZ. Por eso es muy importante y creo que los que han-- trabajan con base de datos, eh, tienen más expertise en esta parte. Sin índices. Es importante también lo que es los índices para, pues mejores búsquedas, rapidez, el tema de, de no generar lentitud en el servidor. También para los compañeros. No sé si les ha pasado que ustedes corren un query y se tumba la base de datos, se comienza a poner todo lento. Entonces, el tema de los índices es muy importante. Y testar de-- testear desde el, del editor, ¿no? Eh, ustedes como administradores, eh, eh, tienen el, el, el, el uso de error Postgres, ¿no? Entonces, ustedes van a poder ver todo en lo que es en tiempo real, ver los errores y todo eso. Bueno, vamos a empezar el laboratorio. ¿Sí?
+Speaker 6
+Una dudita antes ahí.
+Speaker 1
+Sí, sí.
+Speaker 6
+¿Esto se puede decir que es una base de datos analítica o, o es una base de datos vectorizada? ¿O para qué sirve esta base de datos Supabase?
+Speaker 1
+Mmm, Supabase es, eh, a diferencia de Firex, siempre lo-los comparo, eh, que es tipo un JSON, acá es, es un Postgres. ¿Sí? Es, eh, si bien hay otros tipos igual de base de datos, pero vamos viéndolo desde el punto de vista que es, eh, te da un buen límite. Puedes iniciar un proyecto pequeño, eh, te das cincuenta mil, eh, usuarios gratis, media-- eh, quinientos megas de, de espacio y como vamos a ver, eh, [carraspeo] te, te ayuda a poner tus roles, a poner tus primary key, a ordenar bien tus bases de datos. Eh, como tú mismo has dicho, o sea, es vectorizada y por su bajo costo, porque también si ya lo quieren, eh, hacer el, el pago, bueno, no es tan costosa. Te puede ayudar mucho en tus proyectos. Que hay una infinidad ahorita de, de base de datos, sí, pero [carraspeo] esta es una-- para mí es una de las mejorcitas que te puede ayudar cuando inicias tus proyectos. Si ya lo quieren escalable, igual hay el tema de, de, de compra plan. Hay un plan, pero [carraspeo] si lo vemos viendo desde si tú quieres hacer tipo un MVP, te ayuda un montón. Si todos podemos-
+Speaker 6
+Igual, igual mi pregunta viene a eso, profe. Es: ¿una base analítica o una base de datos transaccional? ¿Hay alguien que me aclare?
+Speaker 1
+[chasquido] No, esta es más una base analítica. Ahorita lo vamos a poder ver cuando ya iniciemos el, el, el, el, el laboratorio.
+Speaker 8
+Hija.
+Speaker 1
+¿Sí? Todos tienen Visual Studio abierto, porfa.
+Speaker 9
+Sí.
+Speaker 8
+Sí, estamos listos.
+Speaker 10
+A ver, entras o sales, Fer.
+Speaker 9
+[risas]
+Speaker 10
+Te quedas afuera, pues. Entra, entra, Fer. Entra.
+Speaker 9
+Profe, profe, eh-
+Speaker 10
+Profesor, ¿cuál es el grupo of...?
+Speaker 9
+Adelante.
+Speaker 1
+Ahí también en el-
+Speaker 10
+Estudiantes Cloud Computing.
+Speaker 1
+En el, en el grupo ahí ya están las diapositivas. Voy a subir un TXT, porque para poder tener todos ir a la par, porque mientras espero para poder subirlo.
+Speaker 10
+¿Cómo se llama el grupo?
+Speaker 1
+Ahí donde-- ah, la primera sesión. Ahí mismo. No sé si todos descargaron las diapositivas de la primera sesión.
+Speaker 10
+¿Nos podría tal vez pasar por el chat las diapositivas de pronto?
+Speaker 1
+A ver. Sí, sí, sí. A ver si, si deja cargar ahorita lo, lo, lo...
+Speaker 10
+Ahí en el canal Clases. Sí, en el canal Clases, ahí en Compartidos, ahí están las carpetas.
+Speaker 8
+Sí, en el canal Clases Material dos está. Ay, pasé un mensaje que no quería, pero no, no deja compartir, como que solo cada uno tiene que ir.
+Speaker 1
+A ver. [carraspeo] [sonidos variados] A ver ahí. Ahí les compartí. Sí, sí, sí está.
+Speaker 10
+Ah.
+Speaker 1
+Ya. Mira, ahí tienen la-- ¿sí ven en el chat, porfa?
+Speaker 8
+Sí, se ve, se ve, se ve, eh...
+Speaker 1
+Ya, bacán. Esa es la primera parte. Voy a abrir para poder correrlo juntos. Abraham también.
+Speaker 8
+Bueno. Okey, sí.
+Speaker 11
+Perdón, una pregunta. ¿Hay alguna particularidad por la que estamos usando realmente la versión quince de Next.js si ya estamos por la dieciséis punto dos, si mal no recuerdo?
+Speaker 1
+Sí, ahí es un tema de que me han dado a mí la, la, la, la, la malla aquí. Sí consulté, pero [carraspeo] me dijeron que tendría que usar esa, esa versión . Por ahora.
+Speaker 11
+Vale, gracias.
+Speaker 1
+Sí . ¿Todos tienen ya abierto su, su proyecto?
+Speaker 3
+[carraspeo] Sí, yo, yo tengo en Visual Studio, tengo Supabase, pero mire, profesor, la verdad es que yo tengo dificultad para... con Teams porque como lo estoy usando desde la web porque tengo un correo que no he podido instalarlo en el Teams de la computadora, entonces todo lo que es ir al canal y todo no-- se me dificulta.
+Speaker 1
+Ah, okey. Ya vamos viéndolo. Ya. ¿Sí ven pantalla, no?
+Speaker 8
+Veo, sí.
+Speaker 1
+Ya, bacán. Vamos viendo la primera parte de, del código que les, les puse ahí en el chat. Sí, sí lo pueden ver, ¿verdad?
+Speaker 8
+Sí, de crear la aplicac-- el, el npx tailwind.
+Speaker 1
+Sí . Ya. Vamos a correr la primera parte . Aquí ya la estoy corriendo . Le vamos a poner sí a todo y ya te crea . Mira todo lo que creó en un ratito .
+Speaker 8
+¿Verdad, profesor, que todo esto lo podemos crear con el-- cualquier modelo? Yo me fui con el Sonnet.
+Speaker 1
+Eh, como les dije en, en la primera clase, eh, sí hay, hay manera de integrarlo con modelos libres. Sí, sí hay. Eh, y muy aparte de ese. O me hablas de lo, de Haiku Opus. Mmm, ahí sí para profundizar en tu pregunta .
+Speaker 8
+Gracias.
+Speaker 1
+Si todos le, les, le, les... ¿lograron crear estas car-carpetas? ¿Sí? Me pueden confirmar si alguien tuvo dificultades para poder seguir.
+Speaker 9
+Pulsándole a, a todo sí, profe.
+Speaker 1
+¿Cómo, cómo?
+Speaker 9
+Le estoy dando a todo sí. [carraspeo]
+Speaker 1
+Sí, sí. Ahí dale a todo sí. [carraspeo] El tipo de-
+Speaker 3
+No, yo no le pude seguir, profe, no le pude seguir porque no tengo la presentación y no-
+Speaker 1
+Ya la subí al, al chat. ¿No pueden bajar el chat tampoco?
+Speaker 3
+No, tampoco porque me dice: "Chat no disponible".
+Speaker 9
+¿Usted la puede poner en WhatsApp?
+Speaker 1
+Ah, eso es lo que me pasó la otra vez, pues, que les dije.
+Speaker 8
+La, la puedo capturar pesa y la subo.
+Speaker 1
+Pero voy a ponerlo en el grupo del WhatsApp. Sí puedes ver ahí, ¿no?Ahí.
+Speaker 3
+Tampoco tengo acceso al grupo acá, profe.
+Speaker 1
+¿Tampoco?
+Speaker 8
+Que al compañero puedes descargar PDFs. Creo que te puede servir un PDF.
+Speaker 1
+O en Drive. ¿Tienes Drive?
+Speaker 3
+Sí tengo todo, sino que en este caso particular no puedo bajar de este Teams porque estoy trabajando con el web, pero lo puedo subir al WhatsApp del grupo. De ahí tal vez le podría bajar.
+Speaker 1
+A ver, voy a...
+Speaker 3
+Porfa.
+Speaker 1
+Solo que me-- me estoy dando cuenta que solo administradores nos deja. Yo no soy administrador.
+Speaker 8
+Sí, solo Gian.
+Speaker 1
+Ah, no, pero hay un chat de estudiantes. Ahí están. No, ahorita a ver. Hola, he puesto.
+Speaker 8
+Sí.
+Speaker 1
+Sí, ahí. ¿Tienes acceso?
+Speaker 8
+Sí, sí, sí. Ahí se ve. Profe, le puedo subir el PDF. Al rato le sirvo más rápido el PDF.
+Speaker 1
+Sí, claro.
+Speaker 8
+Listo, me dice si les funciona eso.
+Speaker 12
+La pregunta de usar es lint, biome o none.
+Speaker 3
+¿Cuál es el chat de estudiantes?
+Speaker 1
+Ese es el primer, eh, línea de código que vamos-- estamos usando. Córrela y a todo dale sí.
+Speaker 12
+A mí me está preguntando: "Which linter would you like to use?" Es lint, biome o none.
+Speaker 1
+¿Cómo? ¿Cómo? No te escuché bien.
+Speaker 12
+Yo le puse en el, en el chat.
+Speaker 1
+Ya. A ver.
+Speaker 12
+Es con el sling, si lo que-- si quiere uno, el otro o ninguno. Yo no-- yo lo usé sin el-- con el none directamente.
+Speaker 1
+Ah, no, es el, el dos. Te aparece tres, creo, hay líneas, no. O solo si eso te aparece.
+Speaker 8
+Biome o none.
+Speaker 1
+Ah, no, none, pon.
+Speaker 3
+None.
+Speaker 1
+Sí.
+Speaker 3
+Disculpe, profe. Ya, ya tengo la PPT, ya lo logré ahora. ¿En qué, en qué hoja está el, el prompt que tenemos que pegar? ¿Es la que dice "generando migraciones"?
+Speaker 1
+En el mismo chat lo he puesto.
+Speaker 3
+Ah, ya. Okey, gracias.
+Speaker 1
+Ahí abajito de la presentación, ahí está la línea de código que tenemos que usar.
+Speaker 12
+¿Puedes mostrar tu árbol de archivos para ver si es el mismo?
+Speaker 1
+Sí, ¿no se ve mi pantalla?
+Speaker 12
+No.
+Speaker 1
+¿No?
+Speaker 8
+Eh, la que no se ve es el explorador de archivos del lado izquierdo.
+Speaker 3
+Ah, un control B.
+Speaker 12
+Punto al welcome.
+Speaker 1
+Ya. ¿Ahí ven mi pantalla?
+Speaker 12
+Sí se ve.
+Speaker 1
+Ya, esto les, les tuvo que salir. [carraspeo]
+Speaker 12
+A mí no me apareció nada del Supabase.
+Speaker 3
+[ríendo] No vamos ahí.
+Speaker 1
+No, no, todavía no nos conectamos todavía.
+Speaker 12
+No, no, pero a ti te salió un folder.
+Speaker 1
+¿Cómo, cómo? No, es que esto yo ya lo creé.
+Speaker 12
+Ah, okey.
+Speaker 1
+Ya lo he ido creando. [carraspeo] De que los guio. Sino que estoy esos códigos sí los puedo-- los estoy corriendo. ¿Sí? Ya, ahora sigamos con el siguiente. Igual te dejo en el chat. Bueno, en el chat del grupo y en el de WhatsApp para que puedas verlo. Ya. Todos están ahí, ¿no? Ahora sí vamos a, a, a instalar lo que es Supabase. Ahí les, les dejé la línea . Bueno, yo ya lo hice. Ustedes háganlo para que puedan ver, porfa.
+Speaker 8
+Listo.
+Speaker 3
+No, aquí le damos en sí, ¿cierto, profe? Eso.
+Speaker 12
+Una cosita rápida. ¿Sería tanto set transform guion AI o solo el que dice NPM install Supabase?
+Speaker 1
+No, no, to-todo eso-- esos dos, esos dos. Sí.
+Speaker 13
+Okey.
+Speaker 1
+Está bien. Sí. Con el punto [carraspeo]. Termina en un punto [tose]. Como yo ya lo tengo, alguien que pueda aquí ir a proyectar para poder ver en su máquina, porfa . ¿Alguien que, eh, quiera hacerlo?
+Speaker 9
+Sí, profe, yo le comparto pantalla.
+Speaker 1
+Perfecto.
+Speaker 9
+Me dices para ampliarla, para que se le-- se alcanzara a ver bien [tecleo]. Yo ingresé el código que dijiste: cd taxflow_ai code punto, codot. Me está pidiendo esto: "El código en cli no está setiado en el path".
+Speaker 13
+Y cinco es un compact.
+Speaker 9
+Eh, uy, ¿alguien sabe cómo se pone eso acá en VS Code?
+Speaker 1
+Pue-puedes ampliarlo. Disculpa, puedes ampliarlo porque se ve muy pequeño. O, o ponerlo en el chat lo que te, te, te ha salido. Disculpa.
+Speaker 9
+Listo.
+Speaker 1
+Pero la primera parte sí corrió bien, entiendo.
+Speaker 9
+Sí. Sí, se ve como corriendo bien. Ahí lo puse en el chat [tos de fondo].
+Speaker 1
+Tú tienes-
+Speaker 13
+Control más
+Speaker 1
+...eh, tienes-- [golpe] ¿cómo se llama? Es para tu-
+Speaker 9
+Ah, ¿ese es mejor?
+Speaker 1
+¿Es tu máquina personal?
+Speaker 9
+Sí, es mi máquina personal, profe.
+Speaker 13
+Eso te está pasando solamente al tratar de correr el code, ¿cierto?
+Speaker 1
+Sí.
+Speaker 9
+Sí, cierto, claro.
+Speaker 13
+Ah, okey. Bueno, no sé. Yo uso una terminal que se llama Warp y ella cuando te pasan ese tipo de cosas como que te ayuda. Eh, pero eso es netamente porque no-- como no tienes el CLI de, de Visual Studio Code instalado en tu terminal o en tu máquina. Entonces, claro, no te está reconociendo el code punto, pero no necesitas eso. Si quieres ábrelo directamente con VS Code, el proyecto y ya, no pasa nada.
+Speaker 1
+Sí, este-
+Speaker 13
+No es, no es obligatoria.
+Speaker 1
+Ahí te dice la ruta donde se ha grabado. En user usuario doc personal.
+Speaker 9
+Dale control clic y él ya te lo abre ahí de una.
+Speaker 1
+Sí .
+Speaker 9
+No, no me da como un clic.
+Speaker 13
+Ah, no. Entonces, sí te dio que busca la carpeta. Pero la tienes ahí, ¿no?
+Speaker 9
+Sí, acá estoy. Taskflow.
+Speaker 1
+Ahí ya te dio. Sí.
+Speaker 2
+Sí, ta-- profe, yo se-- yo creo que también podríamos, eh, dividir unas cosas. Hasta cierto punto, yo lo que me trato de guiarme son lo que son comandos meramente de terminal de la máquina, como irse a la carpeta, eh, etcétera. Yo eso lo hago con la terminal propia, eh, command prompt. Lo que es crear código se lo mando a Cloud en la terminal de Cloud, porque ahí está diciéndole a Cloud que se vaya a una carpeta.
+Speaker 1
+Ah, ya. No, no, es que-- sí, recién estoy viendo que lo corrió en Cloud. No, era de correrlo en batch.
+Speaker 9
+Batch, ah, okey.
+Speaker 1
+Sí, sí, sí. No, no, no se corre [carraspeo]. Sí, sí. Recién me doy cuenta. Tienes razón. Cloud recién lo vamos a abrir [carraspeo] después de conectar la base de datos.
+Speaker 2
+Ese es PowerShell.
+Speaker 1
+Recién abrimos.
+Speaker 2
+Da-dale arribita al más y dale command prompt, donde sale... Bueno, ya no sale.
+Speaker 9
+Ya, ya, ya. Está acá. Terminal, eh, ¿me dices que dónde?
+Speaker 2
+Arriba sale un más.
+Speaker 9
+Terminal.
+Speaker 1
+Sí.
+Speaker 2
+Ajá.
+Speaker 1
+Nuevo terminal. Sí.
+Speaker 2
+Pero, eh, este, te está abriendo PowerShell. Arribita donde tienes el mouse, command prompt, debajo de Git Bash.
+Speaker 9
+Ah, ya lo vi.
+Speaker 2
+Dale ahí y ahí sí te va a caer de un solo.
+Speaker 9
+Listo. Ya me abrió el proyecto.
+Speaker 2
+Okey. Y ahí, en ese mismo, abres una terminal ya en tu proyecto. Entonces, todo lo que sea NPX, comandos, lo que ya es generar código, Cloud, eh, dependiendo si tienes Cloud ahí, que ahí sí lo tienes, de hecho.
+Speaker 9
+Okey, acá comandos [carraspeo]. Ya casi. Listo.
+Speaker 2
+Solo lo gustó, solo lo gustó . Profe, ¿dónde quedamos?
+Speaker 1
+Sí. Ahora instalen lo que es Tupa Base. Ahí lo puse también en el chat. Ahí no sé si-- quién ya lo tiene o tú ya lo puedes-- sí, sí, ya lo-- no, pero como te digo, eso córrelo en Git o bueno, en el Shell que te han dicho. Cualquiera de los dos.
+Speaker 9
+En el command prompt, sí.
+Speaker 2
+El command prompt, correct. Ese, ese ya es de... Inbounds. Muy bien. Estamos, profe.
+Speaker 1
+Ya, bacán. Y ahora vamos [tecleo] para hacer un ambiente [carraspeo]. Ahí lo puse en el chat también [carraspeo].
+Speaker 2
+Estamos, profe.
+Speaker 1
+Bacán. Ya. Ahora, mira, ahí les dije que guarden su URLPonen donde en la parteee, en la parte superior y en la parte inferior el key. ¿Sí? Ahí, bueno, tienes que ponerlo para poder conectarte. Todos traten de conectarse
+Speaker 2
+Mmm. Sí, pero, eh, compañero, ahí, ahí tienes que pegar tus credenciales de-
+Speaker 1
+Sí
+Speaker 2
+...de Supabase. Entonces, donde guardaste las credenciales lo modificamos-
+Speaker 1
+No, donde está su página. En todo caso, porque no se pierden. Vas a la página, las copias.
+Speaker 2
+No, donde esta-- donde estabas con, con Supabase, donde creaste el proyecto
+Speaker 1
+En tu navegador. No, no, en tu navegador. En tu Google o donde lo creaste la de Supabase Acá tengo disponible Esos mismos son En Google Drive Ya, esos es. Sí, sí Estoy viendo en qué carpeta, en...
+Speaker 2
+No, donde estábamos con el, el, el otro proyecto, el que te abrió el otro Visual Studio
+Speaker 1
+Ah, okey
+Speaker 2
+Ahí. Entonces, URL, URL y key, key. Solo bueno, solo bueno
+Speaker 1
+Okey, ya estamos
+Speaker 2
+Mmm. No, esa no es el URL
+Speaker 1
+No ¿No? Ah, okey
+Speaker 2
+No, no, no
+Speaker 1
+Entonces es la que está acá
+Speaker 2
+Ese es
+Speaker 1
+Ese es [tos]
+Speaker 2
+Listo, ahora sí ya está bien. Estamos
+Speaker 1
+Échale candela
+Speaker 2
+Estamos, profe
+Speaker 1
+Ya, bacán. ¿Conectó?
+Speaker 2
+Mmm. No, ocupamos un comando para intentar eso. Porque solo instalamos Sup-
+Speaker 1
+¿Ustedes lograron conectarte? ¿Todos se lograron conectar?
+Speaker 2
+Es que todavía no hemos hecho un comando para intentar la conexión. Solo instalamos Supabase e instalamos el environment local. No hemos hecho un... tal vez un ping, digámosle, pues
+Speaker 1
+No, no, no, pero ya con, con las credenciales tendrías que conectarse. ¿Qué te salía eso las credenciales? No tengo-
+Speaker 2
+Pero, pero, pero, pero ¿cómo nos conectamos? Esa es la cosa. ¿Cómo? ¿Cómo nos conectamos?
+Speaker 1
+O sea, ahí, ahí lo que les está queriendo preguntar-
+Speaker 2
+No, tienes que correr el terminal
+Speaker 1
+...en, en el npm. ¿El npm run dev? Sí
+Speaker 2
+Ah, okey
+Speaker 1
+Ah, okey. Que eso es lo que no nos ha dicho, eso es lo que le estamos preguntando [risas] No, ahí está- Sí, falta un, un comando Listo
+Speaker 2
+Okey. Eh, ahí entonces-- no, lo que puedes hacer, compañero, es en el terminal de comandos poner npm run dev. Npm, espacio, run dev. Vámonos, pues solo bueno
+Speaker 1
+Listo. Ahora sí
+Speaker 2
+Vamos a ver. Listo, profe, tenemos localhost
+Speaker 1
+Ya, bacán. ¿Puso sus credenciales? Lo que es más se ve en la pantalla
+Speaker 2
+Sí, el, el environment sa-sale, sale el local, sí
+Speaker 1
+Ya, bacán
+Speaker 2
+Estamos li-- vivos
+Speaker 1
+Ya. Re-realicemos o visual Sí Ahora sí, ahí también en, en tu terminal pon cloud Eh, acá está corriendo, entonces acá ya no me, eh- No, no, no. En tu terminal. O abre otro... ¿Otro terminal? Listo Listo Ya. Ahí vamos a entrar. Ahí ya vamos a crear los prompt. Vamos a hacer todo, todo el tema de la creación, vamos a crear usuarios, vamos a crear las, las tablas que les indiqué. Vamos a dar unos cinco minutos de, de break, ocho y diez, para com-- para ya terminar con, con el laboratorio, ya creando todas las, las tablas Listo
+Speaker 2
+Solo bueno
+Speaker 1
+Profe, yo tuve un, un problema porque por tratar de bajar la PPT y todo eso, me perdí en los pasos iniciales y ya no le pude seguir Ahorita voy a su-- si tienes acceso al, al- Sí ¿Dónde tienes acceso? ¿A los dos, WhatsApp y Teams o solo Teams? Ten-- WhatsApp tengo acceso y tengo abierto Visual Code y, y ya tengo la- Ya, en WhatsApp ahorita voy a enviar todos los, los, los pasos que hemos hecho para que lo puedan... [carraspeo] Porque como ven, son sencillos. Es de correr en- Sí No corran todavía. Ahí no, no les indiqué. No corran en cloud todavía. En cloud recién ahorita lo vamos a usar- Sí ...para ya ver el prompt Es que el problema es que- Sí ...eh, no le-- no, no pude ver en Visual cue-- en, en qué parte usted entró y ingresó los comandos. O sea, en esa parte me perdí Ya, mira Si quiere le comparto pantalla y- Voy a proyectar. Ahí, ahí. Comparte Te comparto, a ver Sí, sí. Ahí, Robert Molina, ¿tienes una consulta? Por mientras, mientras va abriendo tu compañero. Sí, profesor, yo estoy un poco perdido. Eh, en mi Teams ya ingresé, ingresé con la cuenta con que me inscribí. No me aparece el chat- Ya ...no puedo entrar a equipos. No sé si me tienen que dar algún permiso, desconozco Estás con, con- Para poder entrar a ver las clases, las clases grabadas y poder ponerme al día, porque aquí me atrasé Mira, ahí, ahí yo sí te pido, escribe al, al grupo donde... Al grupo de WhatsApp sí estás, ¿no?
+Speaker 14
+¿El que dice Estudiantes Cloud Code?
+Speaker 1
+Sí.
+Speaker 14
+Por Developers edición uno. Sí.
+Speaker 1
+Sí. Ahí escribe para que pue-- Jan te pueda ayudar, porque ahora creo también un alumno estaba así y [carraspeo] lo que pasa es que yo no soy el administrador de, del tema del, del Teams ni del WhatsApp. Entonces-
+Speaker 14
+Okey.
+Speaker 1
+Ahí escríbele. Jan, te voy a pasar el número. Voy a, a fijar su número. Él, él, él ve todo ese temita por parte de, de DataPass.
+Speaker 14
+Sí, por favor, profesor, páseme el número y yo le escribo a él.
+Speaker 1
+Mira, justamente él ahorita ha puesto, pero igual ahí ya puse su número. ¿Sí?
+Speaker 14
+Okey, gracias, profesor.
+Speaker 1
+¿Ya estás proyectando, Jan?
+Speaker 14
+Sí, ahí estoy proyectando.
+Speaker 1
+Ya, bacán. Ándate a, a... Mmm. A ver. New Terminal no te sale para abrir un nuevo terminal en la parte superior.
+Speaker 14
+A ver. Acá arriba tendría que ser. A ver, déjame ver. Aquí. En Visual... Aquí, New File.
+Speaker 1
+Ya.
+Speaker 13
+No, amigo, le tienes que dar a donde dice arriba, arriba en la Mac, eh, sabes que dice Code, File, Edit, bla, bla, bla. Ahí vas a buscar que dice Terminal.
+Speaker 14
+Ah, ya.
+Speaker 13
+Está en inglés. Okey, ahí. Y le vas a dar New Terminal.
+Speaker 14
+Ahí está.
+Speaker 1
+Córrelo. Mira, ahí una flechita. [carraspeo] O ahí también lo puedes correr, pero yo, bueno-
+Speaker 14
+Ya.
+Speaker 1
+Particularmente siempre corro en Git Bash. [carraspeo] Ya depende de, de ustedes. Pero es un terminal, ¿no?
+Speaker 14
+¿Y en dónde le hago eso?
+Speaker 1
+No, no. Ahí ya pon el, la primera línea abajo.
+Speaker 14
+Ya.
+Speaker 1
+No, ahí copia la primera línea que pusimos. Te la voy a volver a replicar.
+Speaker 13
+Ya él acaba de colocar, profe. Ya se la acaba de colocar la que dice n-npx create-ast, el dir. Cópiate toda esa línea.
+Speaker 14
+Dame un segundo. Dame un segundo, le copio del WhatsApp. Espérame. A ver... [suspiro] Y, ah, ¿cuál es la primera línea? NPM...
+Speaker 13
+NPM x, la que dice, la que dice NPM y create hasta el dir, hasta el dir.
+Speaker 14
+Okey, a ver. Ya, ya está ahí.
+Speaker 13
+Y la pe-y la pegas ahí en la terminal.
+Speaker 14
+Listo.
+Speaker 1
+Enter.
+Speaker 13
+Dale enter.
+Speaker 14
+Ya.
+Speaker 13
+Dale yes.
+Speaker 14
+Ahí le pongo. Sí.
+Speaker 1
+Yes. Sí.
+Speaker 14
+Ya.
+Speaker 13
+Okey, ahora dale la segunda que dice cd flow guion ahí.
+Speaker 14
+Ahí. A ver.
+Speaker 13
+En la primera te creó el proyecto. En la segunda te está diciendo que te vayas a esa carpeta nueva que creó el proyecto.
+Speaker 14
+Entiendo.
+Speaker 13
+Y en la última es la que te, la que dice code punto, es la que te dice que abras eso que creaste en Visual Studio Code. Si colocas code punto o espacio punto, ya debería abrirte eso.
+Speaker 14
+A ver, espérame, es que esa... La que tengo es la cd taskflow. Esa ya la copié.
+Speaker 13
+Escríbela, escríbela. Code.
+Speaker 14
+A ver.
+Speaker 13
+E, c, o, d, e . Espacio.
+Speaker 1
+Espacio.
+Speaker 13
+Punto.
+Speaker 14
+Espacio.
+Speaker 13
+Y punto.
+Speaker 14
+Ya.
+Speaker 13
+Okey, y coló-- dale enter . Okey, ya te tengo que-- ya te, ya te va a abrir el Visual Studio Code en esa carpeta. Y cuando esté-
+Speaker 14
+No me reconoce, no me reconoce el comando.
+Speaker 13
+Va. Eh, pero a ver. Bueno, no importa porque ya estás en el Visual Studio Code, ¿cierto?
+Speaker 14
+¿Sí?
+Speaker 13
+Sí, no pasa nada.
+Speaker 14
+Ah, no, estoy en el terminal, igual en el terminal.
+Speaker 13
+Okey, buenísimo. Ahora, en esa misma carpeta vas a copiar la que dice NPM install bla, bla, bla, bla, bla, hasta SSR .
+Speaker 14
+¿Pero con qué? ¿Con comando copy?
+Speaker 13
+Sí, sí, o sea, ahí mismo lo puedes... No, no, no hace falta. Dale quit, borra eso que acabas de colocar. En el, lo, en las, las, los comandos que te pasaron por, por mensaje, por el chat, por cualquiera de los dos, aparece el NPM install arroba supabase install bla bla bla.
+Speaker 14
+Ah, perfecto. Ya, ya.
+Speaker 13
+Ese. Copia ese.
+Speaker 14
+NPM install... Ya.
+Speaker 13
+Eso, dale enter. Eso lo que va a hacer es instalarte el, el, el paquete de Supabase. Y ahora vas a, vas a crear un archivo en esa carpeta que se llame punto env punto local y pegas las variables esas locales que te aparecen ahí con tus credenciales . Como él no te está recono-- como él no te está reconociendo el co-el code, es porque no tiene instalado el CLI directamente en la línea de comandos.
+Speaker 14
+Ya, perfecto.
+Speaker 13
+Entonces, simplemente entra en la carpeta desde el Visual Studio Code y créate en la raíz, creas ese, ese archivo que se llama punto env punto local y listo.
+Speaker 14
+¿Pero tú dices acá? En...
+Speaker 13
+Sí, exactamente. Dale al di-- en el segundo ícono que tienes de arriba para abajo. Eh, ahí te aparecen los archivos, ¿lo ves? El primero es el de Cloud, el segundo-- no, ahí no. En, en, en la izquierda, los que te aparecen a la izquierda, en la barra de la izquierda.
+Speaker 1
+Arriba de la lupa. Ese mero.
+Speaker 13
+Ese.
+Speaker 1
+Arriba, arriba.
+Speaker 13
+Pero al de arriba, el de, el que es como un papel.
+Speaker 14
+Ahí.
+Speaker 13
+Esa es la, donde están los archivos. Pero tienes que abrir, eh... Si quieres, ve donde te creó esa carpeta que tienes ahí.Y creaste, me imagino que la creaste en el-- en tuuu desktop, o sea, en tu, en tu block-- en tu escritorio de la Mac.
+Speaker 14
+Así es.
+Speaker 13
+Busca esa carpeta que se llama taskflow-AI.
+Speaker 14
+Esta, acá está. Aquí está ya.
+Speaker 13
+Y vas a dale-- vale, para dar el botoncito que tienes arriba para crear un archivo. No, no, no, ahí no. Bueno, también, ahí. Dale New File. Y con lo que escribe punto ENV. Punto ENV, pequeño, ajá, eh, punto local. Exacto. Todo pegado. Todo pegado, ¿no?
+Speaker 14
+Mhm.
+Speaker 13
+Okey, dale Enter. Y él te va a crear ese archivo en esa carpeta, ¿cierto?
+Speaker 14
+¿Pero le pones punto primero?
+Speaker 13
+Sí, sí, sí, es que así es la-- esa es la, la forma. Y ahí vas a copiar eso que dice Next public Supabase bla bla bla.
+Speaker 14
+Ay, ay, ay, ay.
+Speaker 13
+Entonces, ahí donde dice Next public Supabase URL, colocas la de Supabase y en la de abajo colocas la key. Y listo.
+Speaker 14
+Ah, perfecto. A ver, Next create... E-eso, ¿no? ¿O no?
+Speaker 13
+No, no, no. Ajá, el que dice Next public Supabase URL. Son las últimas líneas de esto.
+Speaker 14
+A ver, esas no me las mandaron por el...
+Speaker 15
+Sí, están ahí [carraspeo] las que te mandó tu compañero, en el último del chat.
+Speaker 14
+En el último chaaat...
+Speaker 15
+Sí, del Teams. Del Teams.
+Speaker 14
+Ah, sí, es que me puede mandar por WhatsApp, es que no, no tengo acceso al chat de Teams.
+Speaker 15
+Ya, ahí te envío. Te envío el grupo ya para poder avanzar.
+Speaker 14
+Gracias, disculpe, que...
+Speaker 15
+No, no, no se preocupe nadie.
+Speaker 14
+Ah, y acá está. Ya.
+Speaker 15
+Ahí, entre los que no han podido, [carraspeo] vean cómo ha hecho para que puedan hacerlo. Porque la idea era que [carraspeo] lo abras en un nuevo proyecto, pero has tenido harta información. Harta, harta. Ahí pega tus, tus, tus, tus credenciales que, que tienes de Supabase en la, en la web. Ya, entonces, ocho y veinte iniciamos para poder ya hacer las creaciones, ¿ya?
+Speaker 14
+Ya, ven. Gracias, profe, me desconecto.
+Speaker 15
+Hola, ya continuamos porque nos va a ganar el tiempo.
+Speaker 14
+Pimba, vamos.
+Speaker 15
+Ya. Yo voy a proyectar ya.
+Speaker 1
+[carraspeo] Ya, ¿todos ven mi pantalla? Porfa. ¿Me confirman?
+Speaker 9
+A ver, a ver, eh-
+Speaker 16
+Sí, profe. Sí se mira.
+Speaker 1
+Ya. A-abrimos cloud.
+Speaker 9
+Sí.
+Speaker 1
+Vamos. Yo voy dejándole ahí los prompt para poder ir corriendo. Yo también lo voy a correr. Vamos a correr el primero. En el primero, ¿qué le vamos a decir? Aquí te dice hay diez líneas. Le vamos a decir que configure, que configure, eh, en Supabase, en el proyecto, los dos usuarios que habíamos visto, el client y el server, más la raíz para los token de autentificación. Las variables que va a usar, que ya las pusimos, es el URL en database y el key para poder, cómo se llama, hacer la creación. Ahí les estoy poniendo en el chat también para que lo puedan correr junto conmigo. Pueden correrlo, porfa. Si alguien tiene algún inconveniente, nos avisa. Y ahí te dijo: los tres archivos se han creado correctamente. ¿Dónde? Aquí está la ruta. Te está diciendo que aquí se están creando los dos tipos de clientes, el client y el server. ¿Sí? ¿Todos están ahí?
+Speaker 9
+Sin más, sí, creados.
+Speaker 1
+Entonces, lo que aquí los hubiera crea-- tomado, bueno, más o menos en promedio media hora, quince, dependiendo, lo ha hecho, ¿en qué? En menos de-- y podemos ponerle el costo para que ustedes digan: "Mire, ¿y cuánto me costó?" Corrió en veintidós segundos y el costo muy bajo. Ahora, [carraspeo] hasta ahí, ¿nadie estuvo inconveniente para poder continuar? Porfa.
+Speaker 16
+Mmm, no. Rafa, una pregunta. Eeen el tema de costos, ¿solamente aparece eso cuando estamos usando la, el API como tal de Cloud Code?
+Speaker 1
+Sí, ahí justamente-
+Speaker 16
+Porque si yo coloco eso a mí no me sale nada. Lo encuentro como plan.
+Speaker 1
+Sí, justamente. Ahí, bueno, quería dejar, por eso que quise avanzar no mucho la PPT, pero, eh, eh, había una consulta que nos hacían bastante, que es el tema del API, el tema del, tema del prompt, ¿no? Eh, como te digo, o sea, si vamos a usar API, sí vamos a estar teniendo en cuenta eso de los costos, ¿sí? Y cuando tú ya tienes el pro, como ya tienen un paquete, no, no es mucho. Ahora, ahí, bueno, dejaron una pregunta abierta que no se logró entender que era mejor si el API o el pro o el max, qué sé yo. [carraspeo] Mira, una simple regla: si ustedes van a programar en el día entre una, dos horas, la van a fet-- utilizar de vez en cuando, el pro es mucho más, eh, factible económicamente, porque te da entre un ida y vuelta entre treinta, cuarenta y cinco hasta cincuenta, eh, ese intercambio, aproximadamente. Mientras que el API sí es un poco más costoso, pero hay que entender que si solo lo van a utilizar para poder como ayuda para su programación tipo ahorita o lo van a sumergir en su proyecto. Un ejemplo, hagan un agente para que pueda intercambiar, el API es mucho, mucho mejor, por decir. Es un poquito en tema de, de costos, si es que nosotros no sabemos ahorrar ese tema de los costos, el prompt nos va a aumentar un tema el costo, pero más o menos sería esa regla. Si ustedes ya van a utilizar más que todo el API como producción, eh, perdón, si van a hacer un proyecto donde van a utilizar el API, por decir, responda, lo genere en línea, X, Y, Z, va. Pero si lo quieren como ayuda para programar, les ayude, el, el, el pro es mucho más, eh, para sus uso diario, ¿no?
+Speaker 16
+Rafael.
+Speaker 1
+Ya. Siga-sigamos ahora.
+Speaker 16
+Rafael.
+Speaker 1
+Mire. ¿Sí?
+Speaker 16
+Escucha. Oiga, una pregunta. Le puse un poquito la-- arribita, es que me perdí un poquito, ¿qué es lo que puso arriba?
+Speaker 1
+Ah, ya, ya. Igual lo puse en el chat. No, no lo puse. Sí, sí, ya está en el chat. [carraspeo] Igual se lo voy a poner en el del WhatsApp. Creo que-
+Speaker 9
+En el WhatsApp, porfa.
+Speaker 1
+Sí, sí, no se preocupe, mucho. Ya sabía. Vamos a poner en el WhatsApp.
+Speaker 16
+Pero, ¿qué, qué le puso en el cloud code? ¿Qué corrió en el cloud code? No, no hace-- no hizo nada en cloud code.
+Speaker 1
+Un prompt, un prompt, un prompt. [carraspeo]
+Speaker 16
+¿Qué prompt le puso? Eh, a ver. Ah, ese que tiene los tres.
+Speaker 1
+Sí. Ahí le estoy poniendo este prompt. Ahí está también en WhatsApp, que cree los tres archivos.
+Speaker 16
+Y, y las variables también. Esas variables también se la, las-
+Speaker 1
+Claro, claro, claro. Si no, sí o sí, para poder, cómo se llama, realizar esa conexión y la creación. [carraspeo] A-abajo están, estamos poniendo las variables. Si todos claro, porfa, para poder avanzar. Se va a ver corto el tiempo. Quiero intentar acabar este, porque sí es importante. Ya, ahora que generó, vamos a ver lo que ahora decía su compañero, que tiene el... Ver si generó errores. Corran este comando, les estoy dejando. Les estoy dejando en el TeamsAhí está. Y en el Teams también. Córranlo, por favor. Sí, si ven mi pantalla corrió y hay sin errores de TyScript en los tres archi-- en los tres archivos, compilan correctamente. ¿Llegaron hasta ahí?
+Speaker 7
+Una cosita rápida. ¿Eso siempre es con terminal o ya es con directamente con Cloud Code? Solo por consultar.
+Speaker 1
+Con Cloud Code. ¿Por qué? Porque te va a crear ya.
+Speaker 7
+Súper.
+Speaker 1
+Va a crear, eh [carraspeando], ya vam-- estamos utilizando ahorita, ya estamos utilizando la, la, la, la idea de Anthropic. ¿Sí? [carraspeando] Vamos a hacer otro prompt para que nos cree ya tablas.
+Speaker 9
+Sí, a mí me salió que sí, sin errores. Compilo limpio.
+Speaker 1
+¿Sí? Al-alguien le salió con errores para poder verlo, en todo caso.
+Speaker 7
+Sin errores.
+Speaker 1
+Ya, a ver, [carraspeando] vamos a dar un minuto para que todos lleguen ahí, un minutito. [suspirando] [carraspeando] Igual yo todo el código se los voy a poner en su sesión [carraspeando] dos, pero igual para que vayan ahí a la par, por eso he ido pasando uno por uno, ¿no? Para que puedan ver por dónde vamos.
+Speaker 7
+Profe, eh, ok, ahorita en este minuto el objetivo es tener obviamente compilado esto y luego de esto no quisiera adelantarme, pero más o menos el objetivo final del laboratorio es que podamos ver qué, en es, en-- o sea, ¿cuál es el, el, la cúspide hoy?
+Speaker 1
+Claro, vamos a ver las tablas. Ahorita vamos a crear las tablas. Vamos a ver el tema de-- vamos a crear usuarios y vamos a darle sus propiedades para que puedan ver, eh, eh, cómo con Cloud Code, lo que te llevaría entre treinta, cuarenta minutos de un desarrollador lo va a hacer en... Vamos a ver al último en el tiempo que nos toma, [carraspeando] eh, qué usa el tema del, del, del API o en, en el caso de ustedes igual, pues en el tema de el que tiene, eh, Pro, pero la rapidez que lo hace. Lo que llevaría manual ir creando, ir viendo, esto lo hace con un buen prompt, crea los trigger, ve los índices, todo eso. Para pasar a la creación de tablas, ¿ya todos están ahí? ¿Hola, hola?
+Speaker 7
+Pimba, yo estoy.
+Speaker 1
+Ya, vamos. Ahora vamos a crear... Igual se los dejo en el chat para correrlo juntos. Eh, vamos y vamos con el chat de grupo a los dos. Perfecto. Bueno, aquí nomás le dan, eh, presionan enter, acá que te dice cuántas líneas. Y va. Aquí lo que estamos creando son las tablas.
+Speaker 9
+Le dimos a todo, ¿cierto, profe? Sí.
+Speaker 1
+Sí, sí, sí. [carraspeando] Ya. Sí les creó. Mira, tienen que salirle los tres archivos ya. Bueno, en mi caso ya existían. Ustedes, como dice su compañero, le dan sí, pero debe haberle creado así. Las tres. ¿Sí, todos están aquí?
+Speaker 9
+Sí.
+Speaker 1
+Ya. Aquí ha creado las tres tablas, una para los usuarios, las tareas y el tema de las políticas de seguridad. Sobre esta después vamos a, a crear el tema de los roles que les indicaba. ¿Hasta ahí todos estamos bien? Igual no veamos ya el costo, veamos el tiempo, qué tiempo tomó el... Treinta y ocho segundos, en mi caso. ¿Ahí alguien más puede poner ahí que tenga API para ver el tema del co-- del tiempo?
+Speaker 7
+No, profe. ¿Cuál es el comando para ver el tiempo y costos? Perdón.
+Speaker 9
+Slash cost.
+Speaker 1
+Es slash cost.
+Speaker 7
+Muy bien. Excelente, excelente.
+Speaker 1
+C-O-S-T. [carraspeando]
+Speaker 9
+Ah, ya compartieron. Veinticinco minutos, dieciocho segundos.
+Speaker 1
+Entonces, vamos a ver las tablas que nos han creado. [carraspeando] Bueno, [carraspeando] aquí nos ha creado los archivos SQLEn Supabase aquí los tienen. Ahora, todos vuelvan a la página de Supabase.
+Speaker 17
+Ajá, ¿qué hacemos acá?
+Speaker 1
+¿Ve mi pantalla?
+Speaker 17
+Voy.
+Speaker 18
+Sí, profe.
+Speaker 17
+Data path, sí.
+Speaker 1
+Ya. Mira, la parte izquierda superior tenemos lo que es el SQL editor. Le damos clic y nos va a abrir así. ¿Sí lo tienen?
+Speaker 17
+Sí.
+Speaker 18
+A mí me sale el script.
+Speaker 1
+Bacán. No, no, no, yo porque ya los corrí ahora. Ya estuve probando el código. ¿Qué hice? [carraspeo] Como hice el código, estuve viendo que algún... Lo que van a hacer es: volvemos al Visico y en Supabase nos ha creado los SQL. ¿Sí los pueden ver?
+Speaker 18
+Sí, los tres. [carraspeo]
+Speaker 1
+Ya. Vayan al primero, cópienlo, control A, cópienlo, control A, control C y lo pegan acá. ¿Alguien, alguien por ahí?
+Speaker 17
+Sí, aquí va corriendo. Creado unos rows.
+Speaker 1
+Ya. Y en, en, en row. Y así cada una de las tres. Me avisan cuando ya lo tengan.
+Speaker 18
+Profe, disculpe, que, ¿qué fue lo que hizo? Es que no en-- me identifiqué donde dice el SQ-SQL editor.
+Speaker 1
+Sí, ya. Sí, aquí estamos. Ya. [carraspeo] Aquí abren. Espera, para ir al Visico. [tararea]
+Speaker 17
+Lo que te hizo fue código SQL para correrlo ahí.
+Speaker 1
+Exacto.
+Speaker 17
+Entonces, te vas a, a Supabase Migrations.
+Speaker 1
+Ve mi, mi pantalla.
+Speaker 17
+Sí, sí, sí. Supabase Migrations.
+Speaker 1
+Control A, lo pegamos y vamos a Supabase, abrimos-
+Speaker 18
+Y lo corremos.
+Speaker 1
+Y lo corremos. [carraspeo]
+Speaker 18
+A mí me dice: éxito, se nos devolvieron filas en los tres, ¿sí?
+Speaker 1
+Sí, sí, sí. Tiene que correr porque el código está limpio. A no ser igual como ahora, ¿no? Algún, [inhala] algún punto. Ya. Y lo copian por decir acá, si no yo lo borro, le van, van abriendo acá también o si no un nuevo acá, lo copian y en la parte derecha, en medio aproximadamente, por acá, le dan run, correr. Cuando ya tengan las tres me avisan para poder continuar.
+Speaker 18
+Listo de mi lado.
+Speaker 1
+Listo.
+Speaker 17
+Bien va, listo.
+Speaker 1
+Ya, ¿quién más? ¿Todos? Alguien que [carraspeo] tal vez no haya podido, pero a ver si le damos una mano, porfa. Si no, para continuar .
+Speaker 17
+Todos perfectos, entonces.
+Speaker 1
+¿Sí? Ya, bacán. Continuamos entonces . Ahí les voy a dejar otro código para que corran . Igual en él.
+Speaker 18
+Pasarlo. ¿Ese dónde lo corremos, profe? ¿En el Supabase?
+Speaker 1
+Ya. [carraspeo] Ahorita les-- pues vamos de nuevo a Visico.
+Speaker 18
+Ah, okey.
+Speaker 1
+Vamos de nuevo . Ah, no, perdón, perdón. Ese es en Supabase.
+Speaker 17
+SQL editor. SQL editor.
+Speaker 1
+Sí, sí, sí, sí.
+Speaker 18
+Okey, profe.
+Speaker 1
+Sí, sí, sí. Disculpen, disculpen. Mira, por decir, acá yo ya lo tenía, les tiene que salir asíO lo pueden correr otra vez. Acá.
+Speaker 14
+Mmm, ¿puede, puede ponerle en el WhatsApp? ¿Es ese que dice Select table? Ese del que hay que poner en el SQL editor.
+Speaker 1
+Sí, ese es el último.
+Speaker 9
+A mí me retorna table name y row security. ¿Sí? ¿Estamos bien?
+Speaker 1
+Sí, sí, perfecto.
+Speaker 14
+Okey.
+Speaker 1
+Lo corren y miren, ¿ve? Le tiene que salir aquí el, el nombre de la tabla, por decir usuario, las tareas y si está activo el row-level security. Te dice que sí. Te dice que sí, o sea, está activo. Quien entre, ya cuando creemos roles, ¿qué quiere decir esto? Que no va a ver toda la, la base, sino va a ver los roles que nosotros le pongamos de acuerdo a su, a su, a su user, ¿no? A lo que le vamos a crear, a lo que le vamos a dar acceso. ¿A todos les salió así?
+Speaker 14
+Mmm, a mí me sale success, no rows returned. O sea, que éxito, pero no, no hay filas.
+Speaker 2
+No, no creo. No creo...
+Speaker 14
+Sí.
+Speaker 1
+¿Pero no has creado las, las, las tablas? ¿Cada una?
+Speaker 2
+A ver, a ver...
+Speaker 1
+Pero tienes que tener estas tres tablas creadas. O puedes proyectar, si no, para...
+Speaker 14
+A ver. De proyecto. Ahí está. Claro, eso me falta, crear las tablas. ¿Qué nombre son?
+Speaker 1
+Sí, crea las tablas. Crea las tablas. Mira [carraspeo] cómo las creas. Abre, eh... Mmm. Andá a, a, a SQL Edit. No tabla, no. Ándate a la parte izquierda.
+Speaker 14
+Ya.
+Speaker 1
+Ahí en SQL Editor. Y ahí ándate acá a Supabase, donde está tu, tu proyecto.
+Speaker 14
+Mmm.
+Speaker 1
+En Visico. No, en Visico. Pero no, no te ha creado el ese. Si has corrido la parte...
+Speaker 14
+Sí. Está acá en SRC. Aquí.
+Speaker 1
+A ver.
+Speaker 14
+Esto es lo último.
+Speaker 1
+No, no, no, eso no, no, no. Después hemos creado el... SQL. Hasta ahí nomás te has quedado. No has corrido más código en Cloud. A ver, abre tu, tu, tu Cloud.
+Speaker 14
+No, no, no, ahí, ahí. Esto es lo que... hasta ahí llegué.
+Speaker 1
+Ah, ya. No, no, ahí te falta. Ahí tienes que correr este prompt. Espérate.
+Speaker 14
+Crea estos tre-tres archivos SQL ¿o no? ¿O es otro?
+Speaker 9
+Sí, sí, es, es.
+Speaker 14
+Ese sí lo corrí.
+Speaker 1
+¿Sí?
+Speaker 14
+Acá está.
+Speaker 1
+A ver, a ver.
+Speaker 14
+Ese sí lo corrí. Ay, no, no. Ahí está. Mire.
+Speaker 9
+Ah, entonces búscate bajo una carpeta que dice SRC. Ahí va-
+Speaker 1
+No, no, no, pero ese es... Pero... No, pero ese es el client. Ese es uno. De ahí crea tres más. Ese es para-
+Speaker 14
+Ah.
+Speaker 1
+El tema de, de los...
+Speaker 14
+Ya, ese, ese prompt no lo tengo. No, ese prompt no lo tengo.
+Speaker 1
+Ah, ya. Ahí lo pruebo.
+Speaker 14
+Es que yo estoy operando por el WhatsApp, profe, porque el tiempo...
+Speaker 1
+No, no, sí, disculpa. Más bien. Espérate, vamos a ponerlo. Sí, ahí está el último que he creado. Está en WhatsApp. Mira, entra a WhatsApp. Perdón, ahí ya lo copié. Es el antepenúltimo. Dice: crea estos tres archivos SQL en Supabase.
+Speaker 14
+Sí, pues. Ese, ese es este.
+Speaker 1
+No, no, no. Ese no es, porque se te ha tenido que crear. Córrelo nuevamente.
+Speaker 14
+Ah, bueno.
+Speaker 1
+En todo caso. Cópialo.
+Speaker 14
+Lo corro. Ya, lo voy a pegar aquí. Ese. ¿Ese? Listo.
+Speaker 1
+Eh, dos, dos para que no te vuelva a preguntar. O ya, bueno.
+Speaker 14
+Ah, dos, ya.
+Speaker 1
+Sí, para que no te vuelve a preguntar. Si no te va a estar preguntando cada rato.
+Speaker 14
+Ya, ahí, ahí se crearon.
+Speaker 1
+Ya, ahí ve. ¿Ves como ahí recién te aparece? Abajo del server-
+Speaker 14
+Ah, sí.
+Speaker 1
+Abajo es Supabase. No lo habías corrido.
+Speaker 14
+Ya.
+Speaker 1
+Ya. Y ahí, ahí vuelve a correr recién cada una de las tablas, ¿sí? Entra el código SQL.
+Speaker 14
+Ya.
+Speaker 1
+Entra, copia el código, control, a. Pégalo acá en, en Supabase, en la página y córrelo. ¿Ya? Ahí nos avisas igual.
+Speaker 14
+Ah, perfecto.
+Speaker 1
+Voy a avanzar con lo otro. ¿Sí?
+Speaker 14
+Dale, gracias.
+Speaker 1
+Ya. Ya. Ya bacán. Todos estamos acá, ¿no?
+Speaker 2
+Sí, habíamos quedado en, en ver los, las políticas en, en Supabase con el SQL editor.
+Speaker 1
+Sí.
+Speaker 2
+Sí, sí.
+Speaker 1
+Sí, ahori-ahorita continuamos, continuamos. [carraspeo][tarareando] Listo.
+Speaker 2
+Perfecto.
+Speaker 1
+Ya. Ahora vamos a correr... este código. [tarareando] Ya lo puse en el chat. Ese también se corre en la-- en Supabase, en su página. Ahí córranlo. También te lo dejé en el chat.
+Speaker 2
+Listo, profe.
+Speaker 1
+Ya. ¿Corrió?
+Speaker 9
+Sí corrió.
+Speaker 2
+Sí corrió.
+Speaker 1
+Bacán. Mira, aquí tienen el tema de las políticas y todavía no ponemos el tema de los roles. Ahorita ya vamos a entrar a roles. Vamos a crear dos roles y les vamos a dar, eh, el tema de, de, de cada quién qué puede hacer, ¿ok? Hasta ahí vamos bien. Ahora vamos a... ahí mismo. Aquí. Autentificación. Bueno, yo ya los creé. Ustedes le dan acá yu-user, create, new user. Porfa, le dan clic. Bueno, ustedes pónganle, ¿no? Pueden ponerle, qué sé yo, prueba uno, prueba dos, dependiendo como ustedes sí. Una contraseña solamente-
+Speaker 2
+Es muy importante. Que sí, que las contraseñas no se les pierda. A mí me pasó ahí-
+Speaker 1
+Sí.
+Speaker 2
+Que perdí la contraseña y ya se fue. No se pudo recuperar esa contraseña.
+Speaker 1
+Todo, todo, todo, cópienlo en un TXT. Es muy importante. Claves, todo eso. Pónganlo, vayan tenien-- po-poniéndolo en su TXT para que no se puedan perder, porfa.
+Speaker 2
+¿Ahí puedo hacer una consulta? Eh, verás que-
+Speaker 1
+Sí.
+Speaker 2
+En lo que yo intenté recuperar la contraseña hay una opción. Si le das clic, se abre una pantallita a la derecha y abajo sale enviar un link re-recovery. Lo que me parece interesante es que el correo que manda- Ajá. Ese correo, si usted le llega y toda la cosa y lo intenta abrir, profe, verás que intenta abrir una página de localhost. Entonces, eso es lo que yo llego a entender es este, esta Supabase, eh, está hasta cierto punto modularizada a que uno ya tenga URL propia de un proyecto. Entonces, uno simplemente se la pone y él ya manda un correo con tu URL específica, que en este caso le pusimos localhost:3000 para que va-- se vaya a esa página. Entonces, si uno se va a producción, esa URL puede ser dinámica, puede cambiar a 9000, puede cambiar a un dominio, etcétera, etcétera.
+Speaker 1
+Bueno, yo soy sincero, hasta ahorita no me ha pasado el tema de la pérdida de una contraseña, pero igual voy a, voy a, voy a verlo y a ver. Porque no, nunca lo usé. Sí sé que aquí es para el tema de tu recuperación, todo eso. Inclusive puedes resetear, eh, perdón, acá en res-reset. Pero no, no, no lo he usado. Pero mira, interesante. No, no, no, no tenía punto de eso.
+Speaker 9
+Directamente en los templates creo que eso se ve en notificaciones de correo.
+Speaker 2
+Sí, pero esa es la cosa. Te, te llega el correo, pero ese correo, eh, te manda una URL que nunca vas a poder acceder, porque lo que te está dando es una URL de tu pro-- de, de la URL de tu proyecto a una URL que recupera la contraseña. Entonces, de ahí intentar abrir localhost recupera contraseñas.
+Speaker 1
+Por eso en su, en su documentación te pone que las llaves por-- guardes las contraseñas en cuatro llaves. [risas] Ya, ya lo crearon. Crearon los dos para poder hacer el, el tema de las políticas. ¿Ok?
+Speaker 9
+Ahora un segundito.
+Speaker 1
+Miren, en este caso yo tengo usuario A, usuario B. Ahí les voy a pasar el prompt, pero si ustedes le pusieron prueba uno, prueba dos, ahí lo cambian nomás. Sí, porfa. Ahí les estoy pasando.
+Speaker 2
+Listo, ahora sí.
+Speaker 9
+¿O querían esto?
+Speaker 1
+Ahí les dejé un prompt.
+Speaker 2
+Profe, si yo usé otros, otros nombres, no pasa nada, ¿verdad? Para el laboratorio. ¿O tiene que ser exactamente los que mandaste?
+Speaker 1
+No, no, no. Por eso te decía [carraspeo] ahí el user uno como le has puesto, ahí ponle, ¿no? Sino que como yo le puse IB en mi caso.
+Speaker 2
+Por eso. Y si le cambié el nombre, la nombre de la tarea, por ejemplo, chat con contexto, le puse, eh, hacer wireframes, ejemplo. No pasa nada.
+Speaker 1
+No, no, no, no, no debería.
+Speaker 2
+Gracias. Pura vida. Gracias.
+Speaker 1
+¿Ya todos estamos-- ya crearon su, su user, porfa?
+Speaker 19
+Sí, profe. ¿Ese código dónde lo ponemos? ¿En el cloud?
+Speaker 1
+Ya. Ese va a ser en cloud, pero antes de eso, ahí. Mire donde dice el us-- you del user del usuario A, abajo también dice usuario B. Aquí en su página. ¿Si ven mi, mi, mi página, no? Es esto. Esto cópienlo, que está acá, cópienlo y reemplácenlo ahí. ¿Ya? ¿Sí me dejo entender?
+Speaker 19
+Puedo entender.
+Speaker 1
+Esto cópienlo.
+Speaker 19
+Ajá.
+Speaker 1
+Voy a hacerlo yo. Mira. Lo copio, por decir, voy a copiar el prompt .
+Speaker 5
+No estamos viendo la otra pantalla, profe. La-- estamos viendo la de Supabase.
+Speaker 1
+Ah, ya. Ahorita la cambio. Espérate. Pero para abrir un nuevo y editarlo. Ahí es. Ahora sí. [tarareando]
+Speaker 13
+Eso se va a pegar con los UUID del usuario IB, se va a pegar es en el cloud, ¿cierto?
+Speaker 1
+Ahí, ahí sí lo ven, ¿no? ¿Si ven mi pantalla?
+Speaker 19
+Sí.
+Speaker 1
+Ya. Basta. Mira, aquí donde les estoy diciendo del, de Supabase, copiamos acá, ¿sí? Le damos al primero, copiamos, reemplazamos . Reemplazan y reemplazan a los-- aquí a los tres del usuario A y abajo copian y reemplazan del usuario B. ¿Sí? Porfa, háganlo para-- y esto, ese prompt que les he dejado porque está en el chat, lo corren en el Cloud Code. A ver, ¿quién, quién lo hace, porfa?
+Speaker 5
+En el Supabase, ¿no? Esto es un insert de base de datos.
+Speaker 1
+¿Cómo, cómo?
+Speaker 5
+Esto se corre en Supabase, ¿no? En el SQL.
+Speaker 1
+Mmm. No, no, no, no . Sí, ¿lo tienen?
+Speaker 19
+Sí, profe, ahí en, en cloud ya me salió. Este seed solo funciona si estos UUIDs existen en audio users.
+Speaker 1
+¿Te salió error?
+Speaker 19
+Ah, ¿es un error?
+Speaker 1
+No, no. Te digo: "¿Te salió error?" No te escuché bien.
+Speaker 19
+No, no, me salió es que la nota me dice: "Este seed solo funciona si estos--" solo los dos UUIDs-
+Speaker 1
+Ah, claro. Existen.
+Speaker 19
+Existen en audio users. Ajá.
+Speaker 1
+Ya. ¿Quién más? ¿Todos corrieron, porfa?
+Speaker 2
+Sí, estamos bien . Hizo la ins-- hizo la inserción a las tab-- a las tablas.
+Speaker 1
+Exacto, es en cloud. Por eso les decía. Lo que sería manual ahí a cloud lo está haciendo por nosotros .
+Speaker 2
+Yo lo hice en SQL Editor porque no-- realmente los mensajes que me decía no, no me los permitía, honestamente, profe.
+Speaker 1
+No, qué raro, ¿eh? Porque sí, normal, debería permitirte . Ya, ahora sigamos.
+Speaker 5
+A mí me está marcando que si quiero que se cree un archivo de seed con estos datos de prueba.
+Speaker 1
+A ver, a ver, proyecta. Qué raro.
+Speaker 13
+Sí, dile que sí, es que él, él te va a crear como un archivo de migraciones que se llama seed.
+Speaker 2
+La semilla.
+Speaker 5
+Pero me marca dos: el Supabase seeds o el otro y no me deja escoger ninguno.
+Speaker 19
+Será solo uno, ¿no?
+Speaker 1
+Proyecta, a ver, porfa.
+Speaker 13
+[tarareando] Creo que ya te lo creó. Por fin.
+Speaker 1
+Sí, mira. Pon este código en, en Supabase para ver si se creó. Pongan todos, todos pongan ese. No, todos pongan.Tiene que, tiene que, que crearles algo así, mire. Aquí ya está
+Speaker 2
+Me devolvió cinco rows.
+Speaker 1
+Sí, perfecto. Por decir, aquí estamos dándole el tema de configuración, implementación, crear componente, revisión de documento, preparación . Y aquí ya lo podemos-
+Speaker 20
+A mí no me saltó eso. Realmente no me retornó.
+Speaker 1
+¿No?
+Speaker 20
+No. No sé si a alguien más le pasó.
+Speaker 2
+¿Dónde lo pusiste? ¿En, en, en Cloud o en SQL editor lo pusiste?
+Speaker 20
+No, en el editor. En el editor.
+Speaker 2
+Okey. Permiso, profe, lo interrumpí. Disculpe.
+Speaker 1
+No, no, no, pero al-- ¿qué les está saliendo? Pueden proyectar para poder ver. Qué raro.
+Speaker 20
+Yo proyector acá. Ahí ya ve la pantalla, sí. Me sale esto. Ahí lo ejecuté y me sale que no, no tiene-- no contiene registros. Y en el VS Code-
+Speaker 1
+Lo mismo a mí.
+Speaker 20
+Sí. Y en el VS Code yo cuando lo ejecuté . Vamos a ver al final. Mmm. Bueno, le pasó esto.
+Speaker 13
+Lo que pasa es que creo que, creo que lo que les pasó es que si ven en, en, en el lado izquierdo donde tienen los archivos de migración, tienen uno que se llama cero cero cuatro zip, es el último.
+Speaker 20
+Ah, sí, sí.
+Speaker 13
+Ese lo van a, lo van a copiar y lo van a pegar en el SQL de-
+Speaker 20
+Ah, okey.
+Speaker 13
+Para que les pueda servir, porque si no, no les va a funcionar.
+Speaker 20
+Claro.
+Speaker 2
+Pero ¿no iba a hacer eso directamente desde el cloud en el Supabase?
+Speaker 13
+No, porque ahí lo que está haciendo es crearlo. O sea, él lo que va a hacer es crear el archivo. O sea, ese comando que ustedes le lanzaron en el cloud lo que está haciendo es crearles ese archivo y ese archivo, el contenido es lo que ustedes le van a sa-- a soltar en el SQL editor.
+Speaker 20
+Exacto.
+Speaker 2
+Lo que yo entendí es que lo iba a crear directamente, ¿no, profe?
+Speaker 1
+Sí, yo lo creé directamente y yo ni no, no-
+Speaker 2
+Por eso es lo que pregunto.
+Speaker 1
+Un paso han, han hecho...
+Speaker 2
+Sí, sí, digamos, digamos, si, si nos-
+Speaker 1
+O sea, la, la idea aquí es que no, no utilicen... Esto era-- vuelvo al proyecto mi [carraspeo]. A mí no me ha salido ninguno de esos. Un, un punto han, han tenido que-- por eso se los voy a dejar el código, por-- ya por el tiempo, porque tengo clases también. Se los voy a dejar. No debe de apare-aparecerles. Tienen que correrlo de Cloud Code. Cloud Code lo va a crear.
+Speaker 20
+Okey, bueno.
+Speaker 7
+Pero para que lo cree no tendríamos que haberle pasado la non key, la non public key.
+Speaker 2
+Tendría-- de hecho, lo que se tendría que haber hecho, eso es lo que te iba a decir, si lo hacen desde, desde la consola, primero les va a pedir que se autentique y les va a abrir un URL de Supabase y ahí ya queda linkeada, eh, digámosle la sesión con la terminal. Ahí es donde ya-- ahí, profe, permiso. Es la única manera que yo veo donde, donde crea usuarios manuales.
+Speaker 1
+A ver. Okey.
+Speaker 2
+Más bien, profe, eh, no es por de-- bueno, también para aprovechar que usted mencionó que tiene clases. Eh, en la presentación sale la diapositiva veintiséis, que es la tarea.
+Speaker 1
+Ah, no, esa es la tarea en sí, sino que la quise hacer con ustedes. Lo que pasa es que, que el laboratorio, mmm, mi idea es mejor hacerlo en clase y ustedes lo replican. ¿Cuál es la tarea? La tarea es esto, replicarlo ya a su proyecto de ustedes. Porque esto es algo genérico, si se dan cuenta. Pero ustedes si tienen una idea, quieren crear el tema de, eh, sus perfi-- el tema de los roles, el tema puede-- ya tienen que irlo haciendo, porque si se han vis-- si han visto de acuerdo a la, a los puntos del curso, ustedes tienen que presentar siquiera un MVP pequeño de sus, de sus tres flow que hayan, que hayan querido hacer ustedes dentro de la clase. Por eso es que si bien la tarea genérica es seguir los pasos, por eso quería hacer el laboratorio con ustedes y ya no como tarea hacer-- replicar el laboratorio, sino replicarlo con, con ustedes, con lo que estén haciendo en su día a día, qué sé yo, ¿no? Porque si bien entendemos, personalmente [carraspeo] yo cuando inicié a programar el tema de base de datos, eh, ya como gestor de base de datos, a veces muchos no lo conocemos, pero aquí te ayuda bastante a entender tus roles, tú poner-- tú mismo poner cómo se llama [carraspeo], qué propiedades les vas a dar y todo eso. Eso sería más que todo el tema del, de la tarea. Recién la primera tarea que van a tener es intentarlo replicar. Ya tienen los prompt, pero de acuerdo a su proyecto de ustedes, ¿no? Que puedan haber creado estos roles por acá. Lo que estoy viendo es igual. Igual voy a ver bien el, el-- voy a extraer lo que se corrió, porque como vuelvo a repetir, como ve mi pantalla, ah, bueno, a mí no me creó ese punto. O tal vez un paso se ha obviado. Igual yo lo voy a validar, voy a volverlo a correr nuevamente y les paso, a más tardar mañana a las diez, ya todo, todo bien estructurado, ¿sí?
+Speaker 7
+Súper. ¿Y la tarea dónde se lo vamos a hacer llegar?
+Speaker 1
+Ah, ahí en el, en el Teams, hasta donde tengo entendido por los chicos de Jan, allí hay uno en el grupo. Hay un grupo que-- por eso es que creo que tienen que configurarles sí o sí los, los correos. Sí, ahí sí, porfa, les voy a pedir queCoordinen con, con Jean, ahí está en el grupo. A varios he ayudado. Ahí está el tema de, de para poder cargar. Donde yo les cargo, no sé si alguien ha podido descargar de ahí.
+Speaker 21
+Sí.
+Speaker 1
+Ya, en el compartido, donde yo cargo, ahí creo que se va a poner las tareas. Inclusive en el grupo Jean les pasó una ruta. Una ruta que dice para cargar tareas. Ahí sí les voy a pedir para poder revisarlo, para poder avanzar, porque la otra clase, si no me equivoco, es... no la he visto.
+Speaker 2
+Profe, mientras va buscando, yo le confirmo que no existe ninguna carpeta llamada Tareas. Solo existe Canal Clases, Material Académico y Record-
+Speaker 1
+Sí, no, voy a, voy a pedirle a que la cree. Tiene razón, sí estoy viendo. Hay material académico, el tema de las grabaciones. Porque ellos lo han tenido que crear. Como les digo, yo no, no tengo-- no soy administrador, ¿no? No tengo para poder crear así.
+Speaker 2
+Bueno, también-
+Speaker 1
+Mañana le voy a pedir a Jean. Ahí les voy a dejar para que pueda crear o la ruta para poder cargar el tema de, de las tareas. Igual [carraspeo] les voy a pedir, eh, que me dejen sus, sus consultas. Ahí igual cualquier consulta para hacerlo en este tema, como ven es amplio. Hemos tenido que inclusive a correr con las diapo. Eh, para yo en el transcurso de mañana por ahí intentar responderles, ¿no? Cualquier cosa. Como vimos-
+Speaker 21
+Profe. Las tareas, las tareas se suben en una tai-- itable que está dentro directamente del, del grupo. Ahí viene la ruta donde se suben las tareas.
+Speaker 1
+Sí, hay una en el grupo, yo vi que habían puesto, por eso les decía.
+Speaker 21
+Itable, ahí le subes las tareas. Envío de tareas dice ahí.
+Speaker 1
+Sí. Y como-
+Speaker 2
+Pero, pero ¿a dónde se suben? A un, a un drive, a un, a un teams.
+Speaker 21
+Es una, una itable, llenas ahí, que tú subes ahí los archivos. Si entras al grupo, te vas a dar cuenta.
+Speaker 2
+Pero ¿grupo de qué, compañero? Especifíqueme.
+Speaker 21
+En dentro de, dentro del grupo de, de, de aquí de, del WhatsApp.
+Speaker 2
+Ah, ya entendí.
+Speaker 21
+Tú lo, tú lo abres, ahí está un itable, un enlace directo para subir tareas.
+Speaker 2
+Listo, muy amable. Voy a revisarla, muy amable.
+Speaker 21
+Sí, gracias.
+Speaker 9
+La dejo en el chat de una vez, por si no la han encontrado.
+Speaker 1
+Igual voy a revisar bien el código por ese último punto que no hemos podido ver, sino que como yo ya lo había corrido temprano. Igual cualquier cosa para más tardar mañana a las diez, igual que les subí lo anterior, ya les, les subo para que lo puedan replicar, tengan todo el código, ¿sí? Y igual cualquier consulta, cualquier, eh, detalle, igual me, me, me, me consultan por ahí . Igual, bueno, espero [carraspeo] puedan ver, como les digo, Supabase es como para iniciar un proyecto pequeño, es muy fuerte. Un ejemplo, ¿no? Yo les pongo una idea que yo hice. Yo no sé, en Perú hay un, hay una plataforma virtual que, eh, de pago que es Yape. No sé si alguien ha... Acá, bueno, casi hay peruanos, hasta donde tengo entendido, pero es como que tú das tu número de teléfono y te cobran cinco por cien, no, cinco dólares y ahí tú pagas. Entonces, lo que yo hice fue crear una app, eh, para... Porque, ¿qué pasa? Acá hay mucha estafa, ¿no? Replicaban esa app y te engañaban, ibas a las tiendas y te hacían que, que tú pagabas. Entonces, lo que hice yo es crear una app, ¿para qué? Para que el, el, el administrador de Yape, eh, instalaba, eso capturaba la notificación, la levantaba a la nube y él le daba accesos a sus-- le da accesos a sus trabajadores. Por eso si él no está en el local, él puede ver. Entonces, a mí Supabase, cuando empecé esto, me ayudó bastante, porque me... Si bien es [carraspeo] una base transaccional, pero también para mí es un, un, es analítica por el tema del, eh, el tema de su code. Te ayuda bastante, ¿no? Y es para explorar mucho. Entonces, les estoy diciendo un ejemplo que es usable. Hasta ahorita yo tengo esa aplicación y cuando yo la inicié, mmm, la inicié con Supabase. Y bueno, me, me ayudó bastante en su momento. Ya ustedes, dependiendo de sus, de sus proyectos, de sus volúmenes, pueden ir, ¿cómo se llama?, viendo el tema de diferentes opciones. Bueno, mmm, nos vemos el miércoles. Ya nos pasamos ocho minutos. Igual, eh, ahí, porfa, realicen su, su taller u-- y el tema de cualquier consulta, ahí estoy en el transcurso. Mañana-- la presentación ya está en el link, ya también la subimos por WhatsApp y ahorita la sesión de ahorita completa la, la subo hoy dí-- hoy día creo que la subo. De aquí más tarde o más tardar diez de la mañana. Voy a ver por qué ha saltado ese y ahí les, les confirmo. Igual la otra clase les indicó el, el porqué. Muchas gracias.
+Speaker 2
+Muy amable, profesor. Las gracias a usted, profesor.
+Speaker 1
+Hasta luego.
+Speaker 9
+Gracias, profe. Nos vemos.
+Speaker 2
+Buenas noches, compañeros. Cuídense.
+Speaker 1
+Bye, buenas noches.
+Speaker 9
+Buenas noches a todos.
